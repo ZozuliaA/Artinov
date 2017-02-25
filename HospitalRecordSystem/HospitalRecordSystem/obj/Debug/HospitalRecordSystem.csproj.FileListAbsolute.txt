@@ -1,0 +1,1 @@
+c:\users\andii\documents\visual studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalRecordSystem.exe.config
