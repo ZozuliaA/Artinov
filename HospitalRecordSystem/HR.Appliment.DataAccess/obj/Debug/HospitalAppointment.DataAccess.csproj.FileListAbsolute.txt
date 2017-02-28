@@ -1,0 +1,12 @@
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.dll.config
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HADatabaseEntity.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HADatabaseEntity.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.xml
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csprojResolveAssemblyReference.cache
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.pdb

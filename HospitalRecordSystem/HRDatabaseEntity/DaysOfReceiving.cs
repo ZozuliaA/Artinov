@@ -17,6 +17,7 @@ namespace HADatabaseEntity
         public string Friday { get; set; }
         public string Satarday { get; set; }
         public string Sunday { get; set; }
+        //[ForeignKey("TORId")]
         public virtual TimeOfReceiving TimeOfReceiving { get; set; } //FK
 
         // ENUM  ?????? 

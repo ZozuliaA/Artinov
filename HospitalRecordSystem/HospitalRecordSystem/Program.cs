@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using HospitalRecordSystem;
+using HADatabaseEntity;
+using HospitalAppointment.DataAccess;
 
 namespace HospitalApointmentSystem.Client
 {
@@ -12,9 +13,16 @@ namespace HospitalApointmentSystem.Client
         [STAThread]
         static void Main()
         {
+            /*using (var ctx = new HaContext())
+            {
+                Room room = new Room() { RoomNumber = 1 , Type = "noType", Unavaible = false};
+
+                ctx.Rooms.Add(room);
+                ctx.SaveChanges();
+            }*/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
+            Application.Run(new AuthorizatiomForm());
+         }
     }
 }

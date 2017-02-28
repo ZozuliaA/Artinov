@@ -1,0 +1,10 @@
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.dll.config
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.SqlServer.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.xml
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.SqlServer.xml
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.csprojResolveAssemblyReference.cache
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.pdb

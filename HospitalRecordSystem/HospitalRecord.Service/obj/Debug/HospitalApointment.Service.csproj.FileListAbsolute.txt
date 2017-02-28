@@ -1,0 +1,10 @@
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Service.dll.config
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Service.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Service.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalApointment.Service.csprojResolveAssemblyReference.cache
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalAppointment.Service.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalAppointment.Service.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HADatabaseEntity.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HADatabaseEntity.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.xml

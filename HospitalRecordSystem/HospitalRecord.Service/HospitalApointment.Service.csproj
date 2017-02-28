@@ -61,14 +61,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HRService.svc" />
+    <Content Include="HaService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HRService.svc.cs">
-      <DependentUpon>HRService.svc</DependentUpon>
+    <Compile Include="HaService.svc.cs">
+      <DependentUpon>HaService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IHrService.cs" />
+    <Compile Include="IHaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +81,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRDatabaseEntity\HADatabaseEntity.csproj">
+      <Project>{fc4f2e64-1bb3-4886-96d1-2ce3f6984061}</Project>
+      <Name>HADatabaseEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
