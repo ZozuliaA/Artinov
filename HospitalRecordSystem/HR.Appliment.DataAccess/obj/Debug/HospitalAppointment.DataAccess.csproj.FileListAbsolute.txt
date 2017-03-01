@@ -10,3 +10,15 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Deb
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csprojResolveAssemblyReference.cache
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.dll
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.dll.config
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HADatabaseEntity.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HADatabaseEntity.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.pdb

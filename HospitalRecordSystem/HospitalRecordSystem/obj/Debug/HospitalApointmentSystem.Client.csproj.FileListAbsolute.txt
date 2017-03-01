@@ -17,3 +17,20 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HADatabaseEntity.pdb
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.AppointmentForm.resources
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.AuthorizatiomForm.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.exe
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalApointmentSystem.Client.exe
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalApointmentSystem.Client.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\EntityFramework.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HADatabaseEntity.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalAppointment.DataAccess.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalAppointment.DataAccess.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HADatabaseEntity.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\EntityFramework.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.AppointmentForm.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.AuthorizatiomForm.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.Properties.Resources.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.csproj.GenerateResource.Cache

@@ -10,6 +10,13 @@ namespace HospitalAppointment.DataAccess
 
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Doctor>().HasRequired(x => x.Specialty);
+            modelBuilder.Entity<Specialty>().HasOptional(x => x.Doctors);
+            modelBuilder.Entity<Specialty>().HasMany(x => x.Doctors);
+        }
+
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Appoinment> Appoinments { get; set; }
         public DbSet<DaysOfReceiving> DaysOfReceivings { get; set; }
