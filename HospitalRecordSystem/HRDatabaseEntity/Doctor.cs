@@ -20,8 +20,7 @@ namespace HADatabaseEntity
         //[ForeignKey("SpecialtyId")]
         public virtual Specialty Specialty { get; set; } //public Guid DORId { get; set; } //FK
         //[ForeignKey("DORId")]
-        public virtual DaysOfReceiving DaysOfReceiving { get; set; } //public Guid DORId { get; set; } //FK
-        public virtual ICollection<Appoinment> Appoinments { get; set; }
+        //public Guid DORId { get; set; } //FK
         //public Guid TORId { get; set; } //FK
     }
 }

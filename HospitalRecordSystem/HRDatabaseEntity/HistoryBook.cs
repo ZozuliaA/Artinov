@@ -9,6 +9,7 @@ namespace HADatabaseEntity
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid HistoryBookId { get; set; }
+        [Required]
         public int BookNumber { get; set; }
         public int Comment { get; set; }
     }

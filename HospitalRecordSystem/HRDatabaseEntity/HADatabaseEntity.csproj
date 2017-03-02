@@ -53,7 +53,6 @@
     <Compile Include="DaysOfReceiving.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="HistoryBook.cs" />
-    <Compile Include="IdEntity.cs" />
     <Compile Include="Passport.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Phone.cs" />

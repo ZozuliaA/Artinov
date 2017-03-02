@@ -13,6 +13,5 @@ namespace HADatabaseEntity
         public int RoomNumber { get; set; }
         public string Type { get; set; }
         public bool Unavaible { get; set; }
-        public virtual ICollection<Appoinment> Appoinments { get; set; }
     }
 }

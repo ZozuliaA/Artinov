@@ -32,9 +32,7 @@ namespace HADatabaseEntity
         [MinLength(3)]
         [MaxLength(30)]
         public string Login { get; set; }
-        [MinLength(6)]
-        [MaxLength(32)]
-        public string Password { get; set; }
-        public virtual ICollection<Appoinment> Appoinments { get; set; }
+        public string Salt { get; set; }
+        public string Hash { get; set; }
     }
 }
