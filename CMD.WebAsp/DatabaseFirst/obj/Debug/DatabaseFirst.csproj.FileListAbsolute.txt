@@ -1,0 +1,10 @@
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\DatabaseFirst.dll.config
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\DatabaseFirst.dll
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\DatabaseFirst.pdb
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\EntityFramework.dll
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\EntityFramework.xml
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\obj\Debug\DatabaseFirst.csprojResolveAssemblyReference.cache
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\obj\Debug\DatabaseFirst.dll
+C:\Users\Andii\documents\visual studio 2015\Projects\CMD.WebAsp\DatabaseFirst\obj\Debug\DatabaseFirst.pdb

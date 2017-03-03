@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TasksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="StatusText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="StatusTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusType">
+    <Key>
+      <PropertyRef Name="StatusTypeId" />
+    </Key>
+    <Property Name="StatusTypeId" Type="int" Nullable="false" />
+    <Property Name="StatusTypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StatusTypeKey" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskAssign">
+    <Key>
+      <PropertyRef Name="TaskAssignId" />
+    </Key>
+    <Property Name="TaskAssignId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TaskId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="AssignData" Type="datetime" Nullable="false" />
+    <Property Name="CloseData" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskAssignHistory">
+    <Key>
+      <PropertyRef Name="TAHId" />
+    </Key>
+    <Property Name="TAHId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TaskAssignId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="AssignDate" Type="datetime" Nullable="false" />
+    <Property Name="CloseDate" Type="datetime" Nullable="false" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TaskText" Type="nvarchar(max)" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskStatusHistory">
+    <Key>
+      <PropertyRef Name="TSHId" />
+    </Key>
+    <Property Name="TSHId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TaskId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="ChangeComments" Type="nvarchar(max)" />
+    <Property Name="UsersId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Statuses_StatusType">
+    <End Role="StatusType" Type="Self.StatusType" Multiplicity="1" />
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusType">
+        <PropertyRef Name="StatusTypeId" />
+      </Principal>
+      <Dependent Role="Statuses">
+        <PropertyRef Name="StatusTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssign_Statuses">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="TaskAssign" Type="Self.TaskAssign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="TaskAssign">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssign_Tasks">
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
+    <End Role="TaskAssign" Type="Self.TaskAssign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="TaskId" />
+      </Principal>
+      <Dependent Role="TaskAssign">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssign_TaskUsers">
+    <End Role="TaskUsers" Type="Self.TaskUsers" Multiplicity="1" />
+    <End Role="TaskAssign" Type="Self.TaskAssign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TaskAssign">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssignHistory_Statuses">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="TaskAssignHistory" Type="Self.TaskAssignHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="TaskAssignHistory">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssignHistory_TaskAssign">
+    <End Role="TaskAssign" Type="Self.TaskAssign" Multiplicity="1" />
+    <End Role="TaskAssignHistory" Type="Self.TaskAssignHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskAssign">
+        <PropertyRef Name="TaskAssignId" />
+      </Principal>
+      <Dependent Role="TaskAssignHistory">
+        <PropertyRef Name="TaskAssignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssignHistory_TaskUsers">
+    <End Role="TaskUsers" Type="Self.TaskUsers" Multiplicity="1" />
+    <End Role="TaskAssignHistory" Type="Self.TaskAssignHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TaskAssignHistory">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Statuses">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskStatusHistory_Statuses">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="TaskStatusHistory" Type="Self.TaskStatusHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="TaskStatusHistory">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskStatusHistory_Tasks">
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
+    <End Role="TaskStatusHistory" Type="Self.TaskStatusHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="TaskId" />
+      </Principal>
+      <Dependent Role="TaskStatusHistory">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskStatusHistory_TaskUsers">
+    <End Role="TaskUsers" Type="Self.TaskUsers" Multiplicity="1" />
+    <End Role="TaskStatusHistory" Type="Self.TaskStatusHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TaskStatusHistory">
+        <PropertyRef Name="UsersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TasksModelStoreContainer">
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusType" EntityType="Self.StatusType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskAssign" EntityType="Self.TaskAssign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskAssignHistory" EntityType="Self.TaskAssignHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskStatusHistory" EntityType="Self.TaskStatusHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskUsers" EntityType="Self.TaskUsers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Statuses_StatusType" Association="Self.FK_Statuses_StatusType">
+      <End Role="StatusType" EntitySet="StatusType" />
+      <End Role="Statuses" EntitySet="Statuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssign_Statuses" Association="Self.FK_TaskAssign_Statuses">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="TaskAssign" EntitySet="TaskAssign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssign_Tasks" Association="Self.FK_TaskAssign_Tasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="TaskAssign" EntitySet="TaskAssign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssign_TaskUsers" Association="Self.FK_TaskAssign_TaskUsers">
+      <End Role="TaskUsers" EntitySet="TaskUsers" />
+      <End Role="TaskAssign" EntitySet="TaskAssign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssignHistory_Statuses" Association="Self.FK_TaskAssignHistory_Statuses">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="TaskAssignHistory" EntitySet="TaskAssignHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssignHistory_TaskAssign" Association="Self.FK_TaskAssignHistory_TaskAssign">
+      <End Role="TaskAssign" EntitySet="TaskAssign" />
+      <End Role="TaskAssignHistory" EntitySet="TaskAssignHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssignHistory_TaskUsers" Association="Self.FK_TaskAssignHistory_TaskUsers">
+      <End Role="TaskUsers" EntitySet="TaskUsers" />
+      <End Role="TaskAssignHistory" EntitySet="TaskAssignHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Statuses" Association="Self.FK_Tasks_Statuses">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskStatusHistory_Statuses" Association="Self.FK_TaskStatusHistory_Statuses">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="TaskStatusHistory" EntitySet="TaskStatusHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskStatusHistory_Tasks" Association="Self.FK_TaskStatusHistory_Tasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="TaskStatusHistory" EntitySet="TaskStatusHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskStatusHistory_TaskUsers" Association="Self.FK_TaskStatusHistory_TaskUsers">
+      <End Role="TaskUsers" EntitySet="TaskUsers" />
+      <End Role="TaskStatusHistory" EntitySet="TaskStatusHistory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

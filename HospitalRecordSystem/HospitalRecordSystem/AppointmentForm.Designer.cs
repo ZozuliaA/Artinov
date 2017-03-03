@@ -36,6 +36,7 @@
             this.cbChoseDoctor = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.labelSelectTime = new System.Windows.Forms.Label();
+            this.btLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mcThisMonth
@@ -112,9 +113,19 @@
             this.labelSelectTime.TabIndex = 7;
             this.labelSelectTime.Text = "Select Time";
             // 
+            // btLogOut
+            // 
+            this.btLogOut.Location = new System.Drawing.Point(507, 30);
+            this.btLogOut.Name = "btLogOut";
+            this.btLogOut.Size = new System.Drawing.Size(75, 23);
+            this.btLogOut.TabIndex = 8;
+            this.btLogOut.Text = "LogOut";
+            this.btLogOut.UseVisualStyleBackColor = true;
+            // 
             // AppointmentForm
             // 
             this.ClientSize = new System.Drawing.Size(594, 453);
+            this.Controls.Add(this.btLogOut);
             this.Controls.Add(this.labelSelectTime);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.labelSelectDoctor);
@@ -141,5 +152,6 @@
         private System.Windows.Forms.ComboBox cbChoseDoctor;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label labelSelectTime;
+        private System.Windows.Forms.Button btLogOut;
     }
 }
