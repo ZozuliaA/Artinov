@@ -30,3 +30,4 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.App
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.Init.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.New_fields_for_passwords.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csproj.GenerateResource.Cache
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.AddRoleColumn.resources

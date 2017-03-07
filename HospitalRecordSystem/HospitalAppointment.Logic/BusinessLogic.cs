@@ -8,7 +8,7 @@ namespace HospitalAppointment.Logic
     {
         protected readonly BaseRepository<T> Repository; 
 
-        public BusinessLogic(HaContext context)
+        public BusinessLogic()
         {
             Repository = new BaseRepository<T>();
         }

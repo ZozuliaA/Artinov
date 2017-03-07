@@ -13,12 +13,12 @@ namespace HospitalAppointment.DataAccess
             Context = new HaContext();
         }
        
-        public IQueryable<T> GetAll()
+        public virtual IQueryable<T> GetAll()
         {
             return Context.Set<T>();
         }
 
-        public T GetById(Guid id)
+        public virtual T GetById(Guid id)
         {
             return Context.Set<T>().Find(id);
         }
@@ -35,7 +35,7 @@ namespace HospitalAppointment.DataAccess
             Context.SaveChanges();
         }
 
-        public void DeleteById(Guid id)
+        public virtual void DeleteById(Guid id)
         {
             T entity = Context.Set<T>().Find(id); 
             Context.Set<T>().Remove(entity);

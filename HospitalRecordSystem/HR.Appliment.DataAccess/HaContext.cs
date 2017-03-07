@@ -7,7 +7,8 @@ namespace HospitalAppointment.DataAccess
     {
         public HaContext() : base("DbConnection")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -15,6 +16,10 @@ namespace HospitalAppointment.DataAccess
             modelBuilder.Entity<Doctor>().HasRequired(x => x.Specialty);
             modelBuilder.Entity<Specialty>().HasOptional(x => x.Doctors);
             modelBuilder.Entity<Specialty>().HasMany(x => x.Doctors);
+
+            modelBuilder.Entity<Appoinment>().HasRequired(doc => doc.Doctor);
+            modelBuilder.Entity<Appoinment>().HasRequired(p => p.Patient);
+            modelBuilder.Entity<Appoinment>().HasRequired(r => r.Room);
         }
 
         public DbSet<Address> Addresses { get; set; }

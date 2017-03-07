@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201703021510056_New_fields_for_passwords.Designer.cs">
       <DependentUpon>201703021510056_New_fields_for_passwords.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703071227172_AddRoleColumn.cs" />
+    <Compile Include="Migrations\201703071227172_AddRoleColumn.Designer.cs">
+      <DependentUpon>201703071227172_AddRoleColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703021510056_New_fields_for_passwords.resx">
       <DependentUpon>201703021510056_New_fields_for_passwords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703071227172_AddRoleColumn.resx">
+      <DependentUpon>201703071227172_AddRoleColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
