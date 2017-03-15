@@ -41,7 +41,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,6 +84,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -83,6 +93,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalAppointment.Logic\HospitalAppointment.Logic.csproj">
+      <Project>{48734e25-8d9a-49ec-8ebe-fb608497195e}</Project>
+      <Name>HospitalAppointment.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HR.Appliment.DataAccess\HospitalAppointment.DataAccess.csproj">
+      <Project>{9F035D82-7C44-446E-94CB-B59C46DC0655}</Project>
+      <Name>HospitalAppointment.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HRDatabaseEntity\HADatabaseEntity.csproj">
       <Project>{fc4f2e64-1bb3-4886-96d1-2ce3f6984061}</Project>
       <Name>HADatabaseEntity</Name>

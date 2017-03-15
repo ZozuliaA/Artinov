@@ -10,6 +10,11 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Deb
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csprojResolveAssemblyReference.cache
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.dll
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.InitialCreate.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csproj.GenerateResource.Cache
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.Init.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.New_fields_for_passwords.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.AddRoleColumn.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.dll.config
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.dll
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\HospitalAppointment.DataAccess.pdb
@@ -20,14 +25,15 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.App
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csprojResolveAssemblyReference.cache
-C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.dll
-C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.pdb
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.InitialCreate.resources
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csproj.GenerateResource.Cache
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.Init.resources
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.New_fields_for_passwords.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.InitialCreate.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.Init.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.New_fields_for_passwords.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.AddRoleColumn.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.AddDocDaylinkAndModels.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ChangeTypesOfDaysAndTime.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.csproj.GenerateResource.Cache
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.AddRoleColumn.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveGuidGeneratorOnIntPrimeryKey.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveDoctorRequiredSpecialty.resources
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ReturnDoctorRequiredSpecialty.resources

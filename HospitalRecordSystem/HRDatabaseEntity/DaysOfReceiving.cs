@@ -10,13 +10,13 @@ namespace HADatabaseEntity
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid DORId { get; set; }
-        public string Mondey { get; set; }
-        public string Tuesday { get; set; }
-        public string Wednesday { get; set; }
-        public string Thursday { get; set; }
-        public string Friday { get; set; }
-        public string Satarday { get; set; }
-        public string Sunday { get; set; }
+        public bool Mondey { get; set; }
+        public bool Tuesday { get; set; }
+        public bool Wednesday { get; set; }
+        public bool Thursday { get; set; }
+        public bool Friday { get; set; }
+        public bool Satarday { get; set; }
+        public bool Sunday { get; set; }
         //[ForeignKey("TORId")]
         public virtual TimeOfReceiving TimeOfReceiving { get; set; } //FK
 

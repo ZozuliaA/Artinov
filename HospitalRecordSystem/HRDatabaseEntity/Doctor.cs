@@ -18,7 +18,9 @@ namespace HADatabaseEntity
         [Required]
         public string LastName { get; set; }
         //[ForeignKey("SpecialtyId")]
-        public virtual Specialty Specialty { get; set; } //public Guid DORId { get; set; } //FK
+        public virtual Specialty Specialty { get; set; }
+        public virtual DaysOfReceiving DaysOfReceiving { get; set; }
+        //public Guid DORId { get; set; } //FK
         //[ForeignKey("DORId")]
         //public Guid DORId { get; set; } //FK
         //public Guid TORId { get; set; } //FK

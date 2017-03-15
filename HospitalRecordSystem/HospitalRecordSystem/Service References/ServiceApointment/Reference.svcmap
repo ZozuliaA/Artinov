@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c09eda44-068f-4631-bb5d-edc330895d2a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53812/HaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HaService.disco" MetadataType="Disco" ID="9e8f7aa2-47e3-43bb-b8aa-8cb81a3427d3" SourceId="1" SourceUrl="http://localhost:53812/HaService.svc?disco" />
+    <MetadataFile FileName="HaService.xsd" MetadataType="Schema" ID="bad99fb7-aa00-467e-b66c-910d58064249" SourceId="1" SourceUrl="http://localhost:53812/HaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HaService.wsdl" MetadataType="Wsdl" ID="10f01827-0845-4088-a9f7-414e0460249f" SourceId="1" SourceUrl="http://localhost:53812/HaService.svc?wsdl" />
+    <MetadataFile FileName="HaService1.xsd" MetadataType="Schema" ID="d2a008b0-48b1-41cb-b503-04795644986b" SourceId="1" SourceUrl="http://localhost:53812/HaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HaService2.xsd" MetadataType="Schema" ID="f5bc3c22-3b64-4370-9b56-26d0d7f7cdbc" SourceId="1" SourceUrl="http://localhost:53812/HaService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

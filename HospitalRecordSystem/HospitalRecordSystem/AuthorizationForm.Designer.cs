@@ -1,4 +1,6 @@
-﻿namespace HospitalApointmentSystem.Client
+﻿using System.Windows.Forms;
+
+namespace HospitalApointmentSystem.Client
 {
     partial class AuthorizatiomForm
     {
@@ -90,6 +92,8 @@
             this.Controls.Add(this.tbLogin);
             this.Name = "AuthorizatiomForm";
             this.Text = "Authorization";
+            this.Load += new System.EventHandler(this.AuthorizatiomForm_Load);
+            this.FormClosing += new FormClosingEventHandler(AuthorizatiomForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

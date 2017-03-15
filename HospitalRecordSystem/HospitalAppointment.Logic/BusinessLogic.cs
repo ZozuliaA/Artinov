@@ -1,17 +1,29 @@
-﻿using HospitalAppointment.DataAccess;
-
-//using HospitalAppointment.DataAccess;
+﻿using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Configuration;
+using System.Linq;
+using HospitalAppointment.DataAccess;
 
 namespace HospitalAppointment.Logic
 {
-    public class BusinessLogic<T> where T: class 
+    public class BusinessLogic<TEntity , TRepository> where TEntity : class
+                                                      where TRepository : BaseRepository<TEntity>, new()
     {
-        protected readonly BaseRepository<T> Repository; 
+        protected readonly TRepository Repository; 
 
         public BusinessLogic()
         {
-            Repository = new BaseRepository<T>();
+            Repository = new TRepository();
         }
-        
+
+        public void Insert(TEntity item)
+        {
+            Repository.Insert(item);
+        }
+
+        public IQueryable<TEntity> GetAll()
+        {
+            return Repository.GetAll();
+        }
+
     }
 }

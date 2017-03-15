@@ -8,3 +8,19 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HADa
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.dll
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HADatabaseEntity.pdb
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Service.dll.config
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Service.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Service.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.SqlServer.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HADatabaseEntity.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.DataAccess.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Logic.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Logic.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.DataAccess.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\HADatabaseEntity.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.SqlServer.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalApointment.Service.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalAppointment.Service.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalAppointment.Service.pdb

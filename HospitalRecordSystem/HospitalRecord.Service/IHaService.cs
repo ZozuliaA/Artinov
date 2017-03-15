@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.ServiceModel;
 using HADatabaseEntity;
 
@@ -9,6 +10,14 @@ namespace HospitalAppointment.Service
     [ServiceContract]
     public interface IHaService
     {
+        //----Authorization
+        [OperationContract]
+        string GetRole(Guid patientId);
+        [OperationContract]
+        Patient VerefyAuth(string loggin, string password);
+
+
+        //----Appointment
         [OperationContract]
         List<Appoinment> GetAppoinments();
         [OperationContract]
@@ -18,6 +27,8 @@ namespace HospitalAppointment.Service
 
         [OperationContract]
         Patient GetPatientByAppointmentId(Guid appointmentId); // Appointment Num, Id?
+
+        //----Patient
         [OperationContract]
         Phone GetPhoneByPatientId(Guid patientId);
         [OperationContract]
@@ -25,7 +36,28 @@ namespace HospitalAppointment.Service
         [OperationContract]
         Address GetAddressByPatientId(Guid patientId);
         [OperationContract]
-        HistoryBook GetHistoryBookByPatientId(Guid patientId); 
+        HistoryBook GetHistoryBookByPatientId(Guid patientId);
 
+        [OperationContract]
+        void InsertPatient(Patient patientEntity , string password);
+
+        //-----Room----------------
+        [OperationContract]
+        void InsertRoom(Room room);
+        [OperationContract]
+        IQueryable<Room> GetRooms();
+
+        //----Specialty------------
+        [OperationContract]
+        IQueryable<Specialty> GetSpecialties();
+
+        [OperationContract]
+        Specialty GetSpecialtyByName(string specialty);
+
+        //-----Doctor--------------
+        [OperationContract]
+        IQueryable<Doctor> GetDoctors();
+        [OperationContract]
+        void AddDoctor(Doctor doctor);
     }
 }

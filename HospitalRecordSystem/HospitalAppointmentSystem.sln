@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalApointmentSystem.Client", "HospitalRecordSystem\HospitalApointmentSystem.Client.csproj", "{50C5A9DB-B6F5-4194-BFB8-612EB4393BAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5BC4F04A-FF2C-4B5A-9D8C-180AEE0BDB67} = {5BC4F04A-FF2C-4B5A-9D8C-180AEE0BDB67}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalApointment.Service", "HospitalRecord.Service\HospitalApointment.Service.csproj", "{5BC4F04A-FF2C-4B5A-9D8C-180AEE0BDB67}"
 EndProject

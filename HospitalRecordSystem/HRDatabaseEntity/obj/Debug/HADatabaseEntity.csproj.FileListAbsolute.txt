@@ -8,3 +8,12 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\Enti
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.csprojResolveAssemblyReference.cache
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.dll
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.dll.config
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.pdb
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.dll
+C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.pdb

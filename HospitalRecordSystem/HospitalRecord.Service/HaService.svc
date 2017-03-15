@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="HospitalRecord.Service.Service1" CodeBehind="HaService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HospitalAppointment.Service.HaService" CodeBehind="HaService.svc.cs" %>

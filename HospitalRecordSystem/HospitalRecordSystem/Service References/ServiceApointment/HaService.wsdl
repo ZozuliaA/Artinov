@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53812/HaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53812/HaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53812/HaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HADatabaseEntity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHaService_GetRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRole" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_VerefyAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerefyAuth" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_VerefyAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerefyAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAppoinments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppoinments" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAppoinments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppoinmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAppoinmentsByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppoinmentsByDate" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAppoinmentsByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppoinmentsByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetDoctorsBySpecialy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsBySpecialy" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetDoctorsBySpecialy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsBySpecialyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetPatientByAppointmentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByAppointmentId" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetPatientByAppointmentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByAppointmentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetPhoneByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetPhoneByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetPassportByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassportByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetPassportByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassportByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAddressByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAddressByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetHistoryBookByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryBookByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetHistoryBookByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryBookByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_InsertPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPatient" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_InsertPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_InsertRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRoom" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_InsertRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetRooms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRooms" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetRooms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetSpecialties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialties" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetSpecialties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetSpecialtyByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtyByName" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetSpecialtyByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtyByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetDoctors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctors" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetDoctors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_AddDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_AddDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDoctorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHaService">
+    <wsdl:operation name="GetRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRole" message="tns:IHaService_GetRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoleResponse" message="tns:IHaService_GetRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerefyAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/VerefyAuth" message="tns:IHaService_VerefyAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/VerefyAuthResponse" message="tns:IHaService_VerefyAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppoinments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetAppoinments" message="tns:IHaService_GetAppoinments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetAppoinmentsResponse" message="tns:IHaService_GetAppoinments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppoinmentsByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetAppoinmentsByDate" message="tns:IHaService_GetAppoinmentsByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetAppoinmentsByDateResponse" message="tns:IHaService_GetAppoinmentsByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsBySpecialy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetDoctorsBySpecialy" message="tns:IHaService_GetDoctorsBySpecialy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetDoctorsBySpecialyResponse" message="tns:IHaService_GetDoctorsBySpecialy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByAppointmentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetPatientByAppointmentId" message="tns:IHaService_GetPatientByAppointmentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetPatientByAppointmentIdResponse" message="tns:IHaService_GetPatientByAppointmentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetPhoneByPatientId" message="tns:IHaService_GetPhoneByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetPhoneByPatientIdResponse" message="tns:IHaService_GetPhoneByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassportByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetPassportByPatientId" message="tns:IHaService_GetPassportByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetPassportByPatientIdResponse" message="tns:IHaService_GetPassportByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetAddressByPatientId" message="tns:IHaService_GetAddressByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetAddressByPatientIdResponse" message="tns:IHaService_GetAddressByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryBookByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetHistoryBookByPatientId" message="tns:IHaService_GetHistoryBookByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetHistoryBookByPatientIdResponse" message="tns:IHaService_GetHistoryBookByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/InsertPatient" message="tns:IHaService_InsertPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/InsertPatientResponse" message="tns:IHaService_InsertPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/InsertRoom" message="tns:IHaService_InsertRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/InsertRoomResponse" message="tns:IHaService_InsertRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRooms" message="tns:IHaService_GetRooms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoomsResponse" message="tns:IHaService_GetRooms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetSpecialties" message="tns:IHaService_GetSpecialties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetSpecialtiesResponse" message="tns:IHaService_GetSpecialties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtyByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetSpecialtyByName" message="tns:IHaService_GetSpecialtyByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetSpecialtyByNameResponse" message="tns:IHaService_GetSpecialtyByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetDoctors" message="tns:IHaService_GetDoctors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetDoctorsResponse" message="tns:IHaService_GetDoctors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/AddDoctor" message="tns:IHaService_AddDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/AddDoctorResponse" message="tns:IHaService_AddDoctor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHaService" type="tns:IHaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRole">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerefyAuth">
+      <soap:operation soapAction="http://tempuri.org/IHaService/VerefyAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppoinments">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetAppoinments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppoinmentsByDate">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetAppoinmentsByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsBySpecialy">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetDoctorsBySpecialy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByAppointmentId">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetPatientByAppointmentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetPhoneByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassportByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetPassportByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetAddressByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryBookByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetHistoryBookByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatient">
+      <soap:operation soapAction="http://tempuri.org/IHaService/InsertPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoom">
+      <soap:operation soapAction="http://tempuri.org/IHaService/InsertRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialties">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetSpecialties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtyByName">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetSpecialtyByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctors">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetDoctors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDoctor">
+      <soap:operation soapAction="http://tempuri.org/IHaService/AddDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HaService">
+    <wsdl:port name="BasicHttpBinding_IHaService" binding="tns:BasicHttpBinding_IHaService">
+      <soap:address location="http://localhost:53812/HaService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
