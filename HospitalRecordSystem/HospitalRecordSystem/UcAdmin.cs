@@ -53,8 +53,8 @@ namespace HospitalApointmentSystem.Client
 
             using (var client = new HaServiceClient())
             {
-                doc.Specialty = client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString());//. SelectedText);
-                client.AddDoctor(doc);
+                //doc.Specialty = client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString());//. SelectedText);
+                client.AddDoctorOnContext(doc, client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString()).SpecialtyId);
             }
         }
 

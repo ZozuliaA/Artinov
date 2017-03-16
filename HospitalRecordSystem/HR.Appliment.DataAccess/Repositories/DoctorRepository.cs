@@ -14,6 +14,8 @@ namespace HospitalAppointment.DataAccess
         public void AddDoctorOnContext(Doctor doc, int specialtyId)
         {
             doc.Specialty = Context.Specialties.FirstOrDefault(id => id.SpecialtyId.Equals(specialtyId));
+            Context.Doctors.Add(doc);
+            Context.SaveChanges();
         }
     }
 }
