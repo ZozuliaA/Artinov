@@ -39,6 +39,8 @@
             this.rb1020 = new System.Windows.Forms.RadioButton();
             this.rb1000 = new System.Windows.Forms.RadioButton();
             this.labelSelectTime = new System.Windows.Forms.Label();
+            this.tbSelectedData = new System.Windows.Forms.TextBox();
+            this.labelSD = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelSelectDoctor
@@ -81,14 +83,16 @@
             // 
             this.mcThisMonth.Location = new System.Drawing.Point(23, 111);
             this.mcThisMonth.MaxDate = new System.DateTime(2017, 3, 31, 0, 0, 0, 0);
+            this.mcThisMonth.MinDate = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
             this.mcThisMonth.Name = "mcThisMonth";
             this.mcThisMonth.TabIndex = 16;
             this.mcThisMonth.TrailingForeColor = System.Drawing.SystemColors.Highlight;
+            this.mcThisMonth.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mcThisMonth_DateSelected);
             // 
             // rb1200
             // 
             this.rb1200.AutoSize = true;
-            this.rb1200.Location = new System.Drawing.Point(292, 238);
+            this.rb1200.Location = new System.Drawing.Point(262, 259);
             this.rb1200.Name = "rb1200";
             this.rb1200.Size = new System.Drawing.Size(52, 17);
             this.rb1200.TabIndex = 27;
@@ -99,7 +103,7 @@
             // rb1100
             // 
             this.rb1100.AutoSize = true;
-            this.rb1100.Location = new System.Drawing.Point(292, 215);
+            this.rb1100.Location = new System.Drawing.Point(262, 236);
             this.rb1100.Name = "rb1100";
             this.rb1100.Size = new System.Drawing.Size(52, 17);
             this.rb1100.TabIndex = 26;
@@ -110,7 +114,7 @@
             // rb1040
             // 
             this.rb1040.AutoSize = true;
-            this.rb1040.Location = new System.Drawing.Point(292, 192);
+            this.rb1040.Location = new System.Drawing.Point(262, 213);
             this.rb1040.Name = "rb1040";
             this.rb1040.Size = new System.Drawing.Size(52, 17);
             this.rb1040.TabIndex = 25;
@@ -121,7 +125,7 @@
             // rb1020
             // 
             this.rb1020.AutoSize = true;
-            this.rb1020.Location = new System.Drawing.Point(292, 169);
+            this.rb1020.Location = new System.Drawing.Point(262, 190);
             this.rb1020.Name = "rb1020";
             this.rb1020.Size = new System.Drawing.Size(52, 17);
             this.rb1020.TabIndex = 24;
@@ -132,7 +136,7 @@
             // rb1000
             // 
             this.rb1000.AutoSize = true;
-            this.rb1000.Location = new System.Drawing.Point(292, 146);
+            this.rb1000.Location = new System.Drawing.Point(262, 167);
             this.rb1000.Name = "rb1000";
             this.rb1000.Size = new System.Drawing.Size(52, 17);
             this.rb1000.TabIndex = 23;
@@ -143,16 +147,34 @@
             // labelSelectTime
             // 
             this.labelSelectTime.AutoSize = true;
-            this.labelSelectTime.Location = new System.Drawing.Point(289, 120);
+            this.labelSelectTime.Location = new System.Drawing.Point(259, 141);
             this.labelSelectTime.Name = "labelSelectTime";
             this.labelSelectTime.Size = new System.Drawing.Size(63, 13);
             this.labelSelectTime.TabIndex = 22;
             this.labelSelectTime.Text = "Select Time";
             // 
+            // tbSelectedData
+            // 
+            this.tbSelectedData.Location = new System.Drawing.Point(222, 111);
+            this.tbSelectedData.Name = "tbSelectedData";
+            this.tbSelectedData.Size = new System.Drawing.Size(100, 20);
+            this.tbSelectedData.TabIndex = 28;
+            // 
+            // labelSD
+            // 
+            this.labelSD.AutoSize = true;
+            this.labelSD.Location = new System.Drawing.Point(222, 92);
+            this.labelSD.Name = "labelSD";
+            this.labelSD.Size = new System.Drawing.Size(100, 13);
+            this.labelSD.TabIndex = 29;
+            this.labelSD.Text = "Your Selected Data";
+            // 
             // UсPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelSD);
+            this.Controls.Add(this.tbSelectedData);
             this.Controls.Add(this.rb1200);
             this.Controls.Add(this.rb1100);
             this.Controls.Add(this.rb1040);
@@ -184,5 +206,7 @@
         private System.Windows.Forms.RadioButton rb1020;
         private System.Windows.Forms.RadioButton rb1000;
         private System.Windows.Forms.Label labelSelectTime;
+        private System.Windows.Forms.TextBox tbSelectedData;
+        private System.Windows.Forms.Label labelSD;
     }
 }

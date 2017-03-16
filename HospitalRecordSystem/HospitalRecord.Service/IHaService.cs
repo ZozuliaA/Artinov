@@ -19,16 +19,23 @@ namespace HospitalAppointment.Service
 
         //----Appointment
         [OperationContract]
-        List<Appoinment> GetAppoinments();
+        IQueryable<Appoinment> GetAppoinments();
         [OperationContract]
-        List<Appoinment> GetAppoinmentsByDate(DateTime date);
+        IQueryable<Appoinment> GetAppoinmentsByDate(DateTime date);
         [OperationContract]
-        List<Doctor> GetDoctorsBySpecialy(string specialty); // guid?
+        IQueryable<Appoinment> GetAppoinmentsByPatientId(Guid patientId);
 
         [OperationContract]
-        Patient GetPatientByAppointmentId(Guid appointmentId); // Appointment Num, Id?
+        void AddAppointment(Appoinment appoinment);
+
+
+
+
+
 
         //----Patient
+        [OperationContract]
+        Patient GetPatientByAppointmentId(Guid appointmentId);
         [OperationContract]
         Phone GetPhoneByPatientId(Guid patientId);
         [OperationContract]
@@ -54,10 +61,23 @@ namespace HospitalAppointment.Service
         [OperationContract]
         Specialty GetSpecialtyByName(string specialty);
 
+        [OperationContract]
+        int GetSpecialtyIdByName(string specialty);
+
         //-----Doctor--------------
         [OperationContract]
         IQueryable<Doctor> GetDoctors();
         [OperationContract]
+        Doctor GetDoctorById(Guid doctoId);
+        [OperationContract]
         void AddDoctor(Doctor doctor);
+
+        [OperationContract]
+        void AddDoctorOnContext(Doctor doc, int spesialtyId);
+
+        [OperationContract]
+        IQueryable<Doctor> GetDoctorsBySpecialy(int specialty);
+
+        //-----
     }
 }

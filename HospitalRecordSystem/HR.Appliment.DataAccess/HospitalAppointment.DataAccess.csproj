@@ -90,6 +90,7 @@
       <DependentUpon>201703071227172_AddRoleColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\DorRepository.cs" />
     <Compile Include="Repositories\PatientRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />

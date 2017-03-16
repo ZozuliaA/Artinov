@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using HADatabaseEntity;
 using HospitalAppointment.DataAccess;
+using HospitalAppointment.DataAccess.Migrations;
 using HospitalAppointment.Logic;
 
 namespace HospitalAppointment.Service
@@ -58,22 +59,28 @@ namespace HospitalAppointment.Service
         }
 
 
-
-        public List<Appoinment> GetAppoinments()
+        //-----Appointment----------------------------------------
+        public IQueryable<Appoinment> GetAppoinments()
         {
             throw new NotImplementedException();
         }
 
-        public List<Appoinment> GetAppoinmentsByDate(DateTime date)
+        public IQueryable<Appoinment> GetAppoinmentsByDate(DateTime date)
         {
-            throw new NotImplementedException();
+            return _appointmentBusinessLogic.GetAll().Where(d => d.Date.Equals(date));
         }
 
-        public List<Doctor> GetDoctorsBySpecialy(string specialty)
+        public IQueryable<Appoinment> GetAppoinmentsByPatientId(Guid patientId)
         {
-            throw new NotImplementedException();
+            return _appointmentBusinessLogic.GetAll().Where(p => p.Patient.PatientId.Equals(patientId));
         }
 
+        public void AddAppointment(Appoinment appoinment)
+        {
+            _appointmentBusinessLogic.Insert(appoinment);
+        }
+
+        //--------Patient-------------------------------------------
         public Patient GetPatientByAppointmentId(Guid appointmentId)
         {
             throw new NotImplementedException();
@@ -110,22 +117,39 @@ namespace HospitalAppointment.Service
             return _specialtyBusinessLogic.GetAll().FirstOrDefault(x => x.SpecialtyName.Equals(specialty));
         }
 
+        public int GetSpecialtyIdByName(string specialty)
+        {
+            return _specialtyBusinessLogic.GetAll().FirstOrDefault(x => x.SpecialtyName.Equals(specialty)).SpecialtyId;
+        }
+
         //-----Doctor-------------------
         public IQueryable<Doctor> GetDoctors()
         {
             return _doctorBusinessLogic.GetAll();
         }
 
+        public Doctor GetDoctorById(Guid doctoId)
+        {
+            return _doctorBusinessLogic.GetAll().FirstOrDefault(id => id.DoctorId.Equals(doctoId));
+        }
+
         public void AddDoctor(Doctor doctor)
         {
             _doctorBusinessLogic.Insert(doctor);
         }
+        public IQueryable<Doctor> GetDoctorsBySpecialy(int specialtyId)
+        {
+            return _doctorBusinessLogic.GetAll().Where(s => s.Specialty.SpecialtyId.Equals(specialtyId));// .SelectMany(s => s.Specialty.SpecialtyId.Equals(specialtyId));
+        }
 
+        public void AddDoctorOnContext(Doctor doc, int spesialtyId)
+        {
+            _doctorBusinessLogic.AddDoctorOnContext(doc, spesialtyId);
+        }
 
-
-//***********************************************************************************************************
-//***********************************************************************************************************
-//***********************************************************************************************************
+        //***********************************************************************************************************
+        //***********************************************************************************************************
+        //***********************************************************************************************************
         class InvalidHashException : Exception
         {
             //public InvalidHashException() { }

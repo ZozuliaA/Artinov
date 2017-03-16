@@ -52,6 +52,7 @@
     <Compile Include="AppointmentBusinessLogic.cs" />
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="DoctorBusinessLogic.cs" />
+    <Compile Include="DorBusinessLogic.cs" />
     <Compile Include="PatientBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomBusinessLogic.cs" />

@@ -39,11 +39,17 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetAppoinmentsByDate", ReplyAction="http://tempuri.org/IHaService/GetAppoinmentsByDateResponse")]
         System.Threading.Tasks.Task<HADatabaseEntity.Appoinment[]> GetAppoinmentsByDateAsync(System.DateTime date);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctorsBySpecialy", ReplyAction="http://tempuri.org/IHaService/GetDoctorsBySpecialyResponse")]
-        HADatabaseEntity.Doctor[] GetDoctorsBySpecialy(string specialty);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetAppoinmentsByPatientId", ReplyAction="http://tempuri.org/IHaService/GetAppoinmentsByPatientIdResponse")]
+        HADatabaseEntity.Appoinment[] GetAppoinmentsByPatientId(System.Guid patientId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctorsBySpecialy", ReplyAction="http://tempuri.org/IHaService/GetDoctorsBySpecialyResponse")]
-        System.Threading.Tasks.Task<HADatabaseEntity.Doctor[]> GetDoctorsBySpecialyAsync(string specialty);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetAppoinmentsByPatientId", ReplyAction="http://tempuri.org/IHaService/GetAppoinmentsByPatientIdResponse")]
+        System.Threading.Tasks.Task<HADatabaseEntity.Appoinment[]> GetAppoinmentsByPatientIdAsync(System.Guid patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddAppointment", ReplyAction="http://tempuri.org/IHaService/AddAppointmentResponse")]
+        void AddAppointment(HADatabaseEntity.Appoinment appoinment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddAppointment", ReplyAction="http://tempuri.org/IHaService/AddAppointmentResponse")]
+        System.Threading.Tasks.Task AddAppointmentAsync(HADatabaseEntity.Appoinment appoinment);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetPatientByAppointmentId", ReplyAction="http://tempuri.org/IHaService/GetPatientByAppointmentIdResponse")]
         HADatabaseEntity.Patient GetPatientByAppointmentId(System.Guid appointmentId);
@@ -105,17 +111,41 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetSpecialtyByName", ReplyAction="http://tempuri.org/IHaService/GetSpecialtyByNameResponse")]
         System.Threading.Tasks.Task<HADatabaseEntity.Specialty> GetSpecialtyByNameAsync(string specialty);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetSpecialtyIdByName", ReplyAction="http://tempuri.org/IHaService/GetSpecialtyIdByNameResponse")]
+        int GetSpecialtyIdByName(string specialty);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetSpecialtyIdByName", ReplyAction="http://tempuri.org/IHaService/GetSpecialtyIdByNameResponse")]
+        System.Threading.Tasks.Task<int> GetSpecialtyIdByNameAsync(string specialty);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctors", ReplyAction="http://tempuri.org/IHaService/GetDoctorsResponse")]
         HADatabaseEntity.Doctor[] GetDoctors();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctors", ReplyAction="http://tempuri.org/IHaService/GetDoctorsResponse")]
         System.Threading.Tasks.Task<HADatabaseEntity.Doctor[]> GetDoctorsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctorById", ReplyAction="http://tempuri.org/IHaService/GetDoctorByIdResponse")]
+        HADatabaseEntity.Doctor GetDoctorById(System.Guid doctoId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctorById", ReplyAction="http://tempuri.org/IHaService/GetDoctorByIdResponse")]
+        System.Threading.Tasks.Task<HADatabaseEntity.Doctor> GetDoctorByIdAsync(System.Guid doctoId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddDoctor", ReplyAction="http://tempuri.org/IHaService/AddDoctorResponse")]
         void AddDoctor(HADatabaseEntity.Doctor doctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddDoctor", ReplyAction="http://tempuri.org/IHaService/AddDoctorResponse")]
         System.Threading.Tasks.Task AddDoctorAsync(HADatabaseEntity.Doctor doctor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddDoctorOnContext", ReplyAction="http://tempuri.org/IHaService/AddDoctorOnContextResponse")]
+        void AddDoctorOnContext(HADatabaseEntity.Doctor doc, int spesialtyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddDoctorOnContext", ReplyAction="http://tempuri.org/IHaService/AddDoctorOnContextResponse")]
+        System.Threading.Tasks.Task AddDoctorOnContextAsync(HADatabaseEntity.Doctor doc, int spesialtyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctorsBySpecialy", ReplyAction="http://tempuri.org/IHaService/GetDoctorsBySpecialyResponse")]
+        HADatabaseEntity.Doctor[] GetDoctorsBySpecialy(int specialty);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetDoctorsBySpecialy", ReplyAction="http://tempuri.org/IHaService/GetDoctorsBySpecialyResponse")]
+        System.Threading.Tasks.Task<HADatabaseEntity.Doctor[]> GetDoctorsBySpecialyAsync(int specialty);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -177,12 +207,20 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
             return base.Channel.GetAppoinmentsByDateAsync(date);
         }
         
-        public HADatabaseEntity.Doctor[] GetDoctorsBySpecialy(string specialty) {
-            return base.Channel.GetDoctorsBySpecialy(specialty);
+        public HADatabaseEntity.Appoinment[] GetAppoinmentsByPatientId(System.Guid patientId) {
+            return base.Channel.GetAppoinmentsByPatientId(patientId);
         }
         
-        public System.Threading.Tasks.Task<HADatabaseEntity.Doctor[]> GetDoctorsBySpecialyAsync(string specialty) {
-            return base.Channel.GetDoctorsBySpecialyAsync(specialty);
+        public System.Threading.Tasks.Task<HADatabaseEntity.Appoinment[]> GetAppoinmentsByPatientIdAsync(System.Guid patientId) {
+            return base.Channel.GetAppoinmentsByPatientIdAsync(patientId);
+        }
+        
+        public void AddAppointment(HADatabaseEntity.Appoinment appoinment) {
+            base.Channel.AddAppointment(appoinment);
+        }
+        
+        public System.Threading.Tasks.Task AddAppointmentAsync(HADatabaseEntity.Appoinment appoinment) {
+            return base.Channel.AddAppointmentAsync(appoinment);
         }
         
         public HADatabaseEntity.Patient GetPatientByAppointmentId(System.Guid appointmentId) {
@@ -265,6 +303,14 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
             return base.Channel.GetSpecialtyByNameAsync(specialty);
         }
         
+        public int GetSpecialtyIdByName(string specialty) {
+            return base.Channel.GetSpecialtyIdByName(specialty);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetSpecialtyIdByNameAsync(string specialty) {
+            return base.Channel.GetSpecialtyIdByNameAsync(specialty);
+        }
+        
         public HADatabaseEntity.Doctor[] GetDoctors() {
             return base.Channel.GetDoctors();
         }
@@ -273,12 +319,36 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
             return base.Channel.GetDoctorsAsync();
         }
         
+        public HADatabaseEntity.Doctor GetDoctorById(System.Guid doctoId) {
+            return base.Channel.GetDoctorById(doctoId);
+        }
+        
+        public System.Threading.Tasks.Task<HADatabaseEntity.Doctor> GetDoctorByIdAsync(System.Guid doctoId) {
+            return base.Channel.GetDoctorByIdAsync(doctoId);
+        }
+        
         public void AddDoctor(HADatabaseEntity.Doctor doctor) {
             base.Channel.AddDoctor(doctor);
         }
         
         public System.Threading.Tasks.Task AddDoctorAsync(HADatabaseEntity.Doctor doctor) {
             return base.Channel.AddDoctorAsync(doctor);
+        }
+        
+        public void AddDoctorOnContext(HADatabaseEntity.Doctor doc, int spesialtyId) {
+            base.Channel.AddDoctorOnContext(doc, spesialtyId);
+        }
+        
+        public System.Threading.Tasks.Task AddDoctorOnContextAsync(HADatabaseEntity.Doctor doc, int spesialtyId) {
+            return base.Channel.AddDoctorOnContextAsync(doc, spesialtyId);
+        }
+        
+        public HADatabaseEntity.Doctor[] GetDoctorsBySpecialy(int specialty) {
+            return base.Channel.GetDoctorsBySpecialy(specialty);
+        }
+        
+        public System.Threading.Tasks.Task<HADatabaseEntity.Doctor[]> GetDoctorsBySpecialyAsync(int specialty) {
+            return base.Channel.GetDoctorsBySpecialyAsync(specialty);
         }
     }
 }

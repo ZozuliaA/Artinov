@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
 using HospitalAppointment.DataAccess;
@@ -25,5 +26,9 @@ namespace HospitalAppointment.Logic
             return Repository.GetAll();
         }
 
+        public TEntity GetById(Guid entityId)
+        {
+            return Repository.GetById(entityId);
+        }
     }
 }
