@@ -62,7 +62,7 @@ namespace HospitalAppointment.Service
         //-----Appointment----------------------------------------
         public IQueryable<Appoinment> GetAppoinments()
         {
-            throw new NotImplementedException();
+            return _appointmentBusinessLogic.GetAll();
         }
 
         public IQueryable<Appoinment> GetAppoinmentsByDate(DateTime date)
@@ -78,6 +78,11 @@ namespace HospitalAppointment.Service
         public void AddAppointment(Appoinment appoinment)
         {
             _appointmentBusinessLogic.Insert(appoinment);
+        }
+
+        public void DeleteAppointmentById(Guid appoinmentId)
+        {
+            _appointmentBusinessLogic.DeleteById(appoinmentId);
         }
 
         //--------Patient-------------------------------------------

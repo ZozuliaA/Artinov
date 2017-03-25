@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HADatabaseEntity;
 using HospitalApointmentSystem.Client.ServiceApointment;
@@ -39,10 +32,18 @@ namespace HospitalApointmentSystem.Client
                     cbChoseSpesialty.Items.Add(item.SpecialtyName);
                 }
             }
+
+            FillListView();
         }
 
         private void cbChoseSpesialty_SelectedIndexChanged(object sender, EventArgs e)
         {
+            rb1000.Refresh();
+            rb1020.Refresh();
+            rb1040.Refresh();
+            rb1100.Refresh();
+            rb1200.Refresh();
+
             mcThisMonth.Enabled = false;
             rb1000.Enabled = false;
             rb1020.Enabled = false;
@@ -157,6 +158,75 @@ namespace HospitalApointmentSystem.Client
                     
                     //cbChoseSpesialty.Items.Add(item.SpecialtyName);
                 }
+            }
+        }
+
+
+        public void RefreshForm()
+        {
+            FillListView();
+        }
+
+        private void FillListView()
+        {
+            lvPatientApp.Items.Clear();
+
+            //IQueryable<Appoinment> appoinments;
+            using (var client = new HaServiceClient())
+            {
+                var appoinments = client.GetAppoinments();
+
+                foreach (var item in appoinments)
+                {
+                    ListViewItem lvItem = new ListViewItem(item.Date.ToShortDateString());//(i.ToString());
+                    //lvItem.SubItems.Add(appoinments[i].RecordNumber.ToString());
+                    //lvItem.SubItems.Add(item.Date.T());
+                    lvItem.SubItems.Add(item.Time);//.ToString());
+                    lvItem.SubItems.Add(item.Doctor.FirstName);
+                    lvItem.SubItems.Add(item.Room.RoomNumber.ToString());
+                    //+ appoinments[i].Doctor.LastName);
+
+                    lvPatientApp.Items.Add(lvItem);
+                }
+                int countAppointments = appoinments.Length;
+
+                /*for (int i = 0; i < countAppointments; i++)
+                {
+                    ListViewItem lvItem = new ListViewItem();//(i.ToString());
+                    //lvItem.SubItems.Add(appoinments[i].RecordNumber.ToString());
+                    lvItem.SubItems.Add(appoinments[i].Date.ToString());
+                    lvItem.SubItems.Add(appoinments[i].Time);//.ToString());
+                    lvItem.SubItems.Add(appoinments[i].Room.RoomNumber.ToString());
+                    lvItem.SubItems.Add(appoinments[i].Doctor.FirstName);//+ appoinments[i].Doctor.LastName);
+
+                    lvPatientApp.Items.Add(lvItem);
+                }*/
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            using (var client = new HaServiceClient())
+            {
+                
+            }
+        }
+
+        private void btCanselApp_Click(object sender, EventArgs e)
+        {
+            int selectedAnimal = lvPatientApp.SelectedItems.Count;
+            if (selectedAnimal != 0)
+            {
+                ListViewItem selectedItem = lvPatientApp.SelectedItems[0];
+                Guid selectedId = Guid.Parse(selectedItem.SubItems[3].Text);
+                using (var client = new HaServiceClient())
+                {
+                    client.DeleteAppointmentById(selectedId);
+                }
+                
+                FillListView();
             }
         }
     }

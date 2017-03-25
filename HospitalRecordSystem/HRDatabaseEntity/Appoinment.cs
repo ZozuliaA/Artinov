@@ -8,11 +8,6 @@ namespace HADatabaseEntity
 {
     public class Appoinment
     {
-        public Appoinment()
-        {
-            AppointmentId = new Guid();
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid AppointmentId { get; set; }

@@ -30,5 +30,10 @@ namespace HospitalAppointment.Logic
         {
             return Repository.GetById(entityId);
         }
+
+        public void DeleteById(Guid entityId)
+        {
+            Repository.DeleteById(entityId);
+        }
     }
 }

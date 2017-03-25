@@ -43,6 +43,12 @@
   <wsdl:message name="IHaService_AddAppointment_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAppointmentResponse" />
   </wsdl:message>
+  <wsdl:message name="IHaService_DeleteAppointmentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentById" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_DeleteAppointmentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IHaService_GetPatientByAppointmentId_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPatientByAppointmentId" />
   </wsdl:message>
@@ -164,6 +170,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/AddAppointment" message="tns:IHaService_AddAppointment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/AddAppointmentResponse" message="tns:IHaService_AddAppointment_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/DeleteAppointmentById" message="tns:IHaService_DeleteAppointmentById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/DeleteAppointmentByIdResponse" message="tns:IHaService_DeleteAppointmentById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPatientByAppointmentId">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetPatientByAppointmentId" message="tns:IHaService_GetPatientByAppointmentId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetPatientByAppointmentIdResponse" message="tns:IHaService_GetPatientByAppointmentId_OutputMessage" />
@@ -278,6 +288,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddAppointment">
       <soap:operation soapAction="http://tempuri.org/IHaService/AddAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentById">
+      <soap:operation soapAction="http://tempuri.org/IHaService/DeleteAppointmentById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

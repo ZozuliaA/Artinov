@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
-using HADatabaseEntity;
-using HospitalApointmentSystem.Client.ServiceApointment;
 
 namespace HospitalApointmentSystem.Client
 {

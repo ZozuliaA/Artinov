@@ -51,6 +51,12 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/AddAppointment", ReplyAction="http://tempuri.org/IHaService/AddAppointmentResponse")]
         System.Threading.Tasks.Task AddAppointmentAsync(HADatabaseEntity.Appoinment appoinment);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/DeleteAppointmentById", ReplyAction="http://tempuri.org/IHaService/DeleteAppointmentByIdResponse")]
+        void DeleteAppointmentById(System.Guid appoinmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/DeleteAppointmentById", ReplyAction="http://tempuri.org/IHaService/DeleteAppointmentByIdResponse")]
+        System.Threading.Tasks.Task DeleteAppointmentByIdAsync(System.Guid appoinmentId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetPatientByAppointmentId", ReplyAction="http://tempuri.org/IHaService/GetPatientByAppointmentIdResponse")]
         HADatabaseEntity.Patient GetPatientByAppointmentId(System.Guid appointmentId);
         
@@ -221,6 +227,14 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         
         public System.Threading.Tasks.Task AddAppointmentAsync(HADatabaseEntity.Appoinment appoinment) {
             return base.Channel.AddAppointmentAsync(appoinment);
+        }
+        
+        public void DeleteAppointmentById(System.Guid appoinmentId) {
+            base.Channel.DeleteAppointmentById(appoinmentId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAppointmentByIdAsync(System.Guid appoinmentId) {
+            return base.Channel.DeleteAppointmentByIdAsync(appoinmentId);
         }
         
         public HADatabaseEntity.Patient GetPatientByAppointmentId(System.Guid appointmentId) {

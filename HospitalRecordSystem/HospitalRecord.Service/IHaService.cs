@@ -28,6 +28,9 @@ namespace HospitalAppointment.Service
         [OperationContract]
         void AddAppointment(Appoinment appoinment);
 
+        [OperationContract]
+        void DeleteAppointmentById(Guid appoinmentId);
+
 
 
 

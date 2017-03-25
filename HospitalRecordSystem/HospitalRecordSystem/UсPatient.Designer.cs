@@ -41,12 +41,19 @@
             this.labelSelectTime = new System.Windows.Forms.Label();
             this.tbSelectedData = new System.Windows.Forms.TextBox();
             this.labelSD = new System.Windows.Forms.Label();
+            this.lvPatientApp = new System.Windows.Forms.ListView();
+            this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btAddAppointment = new System.Windows.Forms.Button();
+            this.btCanselApp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelSelectDoctor
             // 
             this.labelSelectDoctor.AutoSize = true;
-            this.labelSelectDoctor.Location = new System.Drawing.Point(20, 62);
+            this.labelSelectDoctor.Location = new System.Drawing.Point(8, 76);
             this.labelSelectDoctor.Name = "labelSelectDoctor";
             this.labelSelectDoctor.Size = new System.Drawing.Size(72, 13);
             this.labelSelectDoctor.TabIndex = 21;
@@ -55,7 +62,7 @@
             // cbChoseDoctor
             // 
             this.cbChoseDoctor.FormattingEnabled = true;
-            this.cbChoseDoctor.Location = new System.Drawing.Point(23, 78);
+            this.cbChoseDoctor.Location = new System.Drawing.Point(11, 92);
             this.cbChoseDoctor.Name = "cbChoseDoctor";
             this.cbChoseDoctor.Size = new System.Drawing.Size(164, 21);
             this.cbChoseDoctor.TabIndex = 20;
@@ -64,7 +71,7 @@
             // labelSelectSpesialty
             // 
             this.labelSelectSpesialty.AutoSize = true;
-            this.labelSelectSpesialty.Location = new System.Drawing.Point(20, 8);
+            this.labelSelectSpesialty.Location = new System.Drawing.Point(8, 8);
             this.labelSelectSpesialty.Name = "labelSelectSpesialty";
             this.labelSelectSpesialty.Size = new System.Drawing.Size(83, 13);
             this.labelSelectSpesialty.TabIndex = 19;
@@ -73,7 +80,7 @@
             // cbChoseSpesialty
             // 
             this.cbChoseSpesialty.FormattingEnabled = true;
-            this.cbChoseSpesialty.Location = new System.Drawing.Point(23, 24);
+            this.cbChoseSpesialty.Location = new System.Drawing.Point(11, 24);
             this.cbChoseSpesialty.Name = "cbChoseSpesialty";
             this.cbChoseSpesialty.Size = new System.Drawing.Size(164, 21);
             this.cbChoseSpesialty.TabIndex = 18;
@@ -81,7 +88,7 @@
             // 
             // mcThisMonth
             // 
-            this.mcThisMonth.Location = new System.Drawing.Point(23, 111);
+            this.mcThisMonth.Location = new System.Drawing.Point(200, 24);
             this.mcThisMonth.MaxDate = new System.DateTime(2017, 3, 31, 0, 0, 0, 0);
             this.mcThisMonth.MinDate = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
             this.mcThisMonth.Name = "mcThisMonth";
@@ -92,7 +99,7 @@
             // rb1200
             // 
             this.rb1200.AutoSize = true;
-            this.rb1200.Location = new System.Drawing.Point(262, 259);
+            this.rb1200.Location = new System.Drawing.Point(424, 164);
             this.rb1200.Name = "rb1200";
             this.rb1200.Size = new System.Drawing.Size(52, 17);
             this.rb1200.TabIndex = 27;
@@ -103,7 +110,7 @@
             // rb1100
             // 
             this.rb1100.AutoSize = true;
-            this.rb1100.Location = new System.Drawing.Point(262, 236);
+            this.rb1100.Location = new System.Drawing.Point(424, 141);
             this.rb1100.Name = "rb1100";
             this.rb1100.Size = new System.Drawing.Size(52, 17);
             this.rb1100.TabIndex = 26;
@@ -114,7 +121,7 @@
             // rb1040
             // 
             this.rb1040.AutoSize = true;
-            this.rb1040.Location = new System.Drawing.Point(262, 213);
+            this.rb1040.Location = new System.Drawing.Point(424, 118);
             this.rb1040.Name = "rb1040";
             this.rb1040.Size = new System.Drawing.Size(52, 17);
             this.rb1040.TabIndex = 25;
@@ -125,7 +132,7 @@
             // rb1020
             // 
             this.rb1020.AutoSize = true;
-            this.rb1020.Location = new System.Drawing.Point(262, 190);
+            this.rb1020.Location = new System.Drawing.Point(424, 95);
             this.rb1020.Name = "rb1020";
             this.rb1020.Size = new System.Drawing.Size(52, 17);
             this.rb1020.TabIndex = 24;
@@ -136,7 +143,7 @@
             // rb1000
             // 
             this.rb1000.AutoSize = true;
-            this.rb1000.Location = new System.Drawing.Point(262, 167);
+            this.rb1000.Location = new System.Drawing.Point(424, 72);
             this.rb1000.Name = "rb1000";
             this.rb1000.Size = new System.Drawing.Size(52, 17);
             this.rb1000.TabIndex = 23;
@@ -147,7 +154,7 @@
             // labelSelectTime
             // 
             this.labelSelectTime.AutoSize = true;
-            this.labelSelectTime.Location = new System.Drawing.Point(259, 141);
+            this.labelSelectTime.Location = new System.Drawing.Point(421, 56);
             this.labelSelectTime.Name = "labelSelectTime";
             this.labelSelectTime.Size = new System.Drawing.Size(63, 13);
             this.labelSelectTime.TabIndex = 22;
@@ -155,7 +162,7 @@
             // 
             // tbSelectedData
             // 
-            this.tbSelectedData.Location = new System.Drawing.Point(222, 111);
+            this.tbSelectedData.Location = new System.Drawing.Point(376, 27);
             this.tbSelectedData.Name = "tbSelectedData";
             this.tbSelectedData.Size = new System.Drawing.Size(100, 20);
             this.tbSelectedData.TabIndex = 28;
@@ -163,16 +170,76 @@
             // labelSD
             // 
             this.labelSD.AutoSize = true;
-            this.labelSD.Location = new System.Drawing.Point(222, 92);
+            this.labelSD.Location = new System.Drawing.Point(376, 8);
             this.labelSD.Name = "labelSD";
             this.labelSD.Size = new System.Drawing.Size(100, 13);
             this.labelSD.TabIndex = 29;
             this.labelSD.Text = "Your Selected Data";
             // 
+            // lvPatientApp
+            // 
+            this.lvPatientApp.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colDate,
+            this.colTime,
+            this.colDoc,
+            this.colRoom});
+            this.lvPatientApp.GridLines = true;
+            this.lvPatientApp.Location = new System.Drawing.Point(11, 235);
+            this.lvPatientApp.MultiSelect = false;
+            this.lvPatientApp.Name = "lvPatientApp";
+            this.lvPatientApp.Size = new System.Drawing.Size(473, 113);
+            this.lvPatientApp.TabIndex = 30;
+            this.lvPatientApp.UseCompatibleStateImageBehavior = false;
+            this.lvPatientApp.View = System.Windows.Forms.View.Details;
+            // 
+            // colDate
+            // 
+            this.colDate.Text = "Date";
+            this.colDate.Width = 88;
+            // 
+            // colTime
+            // 
+            this.colTime.Text = "Time";
+            this.colTime.Width = 84;
+            // 
+            // colRoom
+            // 
+            this.colRoom.DisplayIndex = 2;
+            this.colRoom.Text = "Room";
+            // 
+            // colDoc
+            // 
+            this.colDoc.DisplayIndex = 3;
+            this.colDoc.Text = "Doctor";
+            this.colDoc.Width = 254;
+            // 
+            // btAddAppointment
+            // 
+            this.btAddAppointment.Location = new System.Drawing.Point(505, 162);
+            this.btAddAppointment.Name = "btAddAppointment";
+            this.btAddAppointment.Size = new System.Drawing.Size(75, 23);
+            this.btAddAppointment.TabIndex = 31;
+            this.btAddAppointment.Text = "Appontment";
+            this.btAddAppointment.UseVisualStyleBackColor = true;
+            this.btAddAppointment.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btCanselApp
+            // 
+            this.btCanselApp.Location = new System.Drawing.Point(505, 235);
+            this.btCanselApp.Name = "btCanselApp";
+            this.btCanselApp.Size = new System.Drawing.Size(75, 23);
+            this.btCanselApp.TabIndex = 32;
+            this.btCanselApp.Text = "Cansel App";
+            this.btCanselApp.UseVisualStyleBackColor = true;
+            this.btCanselApp.Click += new System.EventHandler(this.btCanselApp_Click);
+            // 
             // UсPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btCanselApp);
+            this.Controls.Add(this.btAddAppointment);
+            this.Controls.Add(this.lvPatientApp);
             this.Controls.Add(this.labelSD);
             this.Controls.Add(this.tbSelectedData);
             this.Controls.Add(this.rb1200);
@@ -187,7 +254,7 @@
             this.Controls.Add(this.cbChoseSpesialty);
             this.Controls.Add(this.mcThisMonth);
             this.Name = "UсPatient";
-            this.Size = new System.Drawing.Size(670, 345);
+            this.Size = new System.Drawing.Size(670, 387);
             this.Load += new System.EventHandler(this.UсPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,5 +275,12 @@
         private System.Windows.Forms.Label labelSelectTime;
         private System.Windows.Forms.TextBox tbSelectedData;
         private System.Windows.Forms.Label labelSD;
+        private System.Windows.Forms.ListView lvPatientApp;
+        private System.Windows.Forms.ColumnHeader colDate;
+        private System.Windows.Forms.ColumnHeader colTime;
+        private System.Windows.Forms.ColumnHeader colRoom;
+        private System.Windows.Forms.ColumnHeader colDoc;
+        private System.Windows.Forms.Button btAddAppointment;
+        private System.Windows.Forms.Button btCanselApp;
     }
 }
