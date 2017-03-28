@@ -17,6 +17,11 @@ namespace HADatabaseEntity
         public string SecondName { get; set; }
         [Required]
         public string LastName { get; set; }
+        [Required]
+        public string Role { get; set; }
+        public string LoginD { get; set; }
+        public string HashD { get; set; }
+
         //[ForeignKey("SpecialtyId")]
         public virtual Specialty Specialty { get; set; }
         public virtual DaysOfReceiving DaysOfReceiving { get; set; }

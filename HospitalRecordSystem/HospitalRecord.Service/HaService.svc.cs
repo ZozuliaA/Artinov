@@ -25,6 +25,11 @@ namespace HospitalAppointment.Service
             throw new NotImplementedException();
         }
 
+        public string CreateHashOnServer(string password)
+        {
+            return CreateHash(password);
+        }
+
         public Patient VerefyAuth(string loggin, string password)
         {
             Patient p = _patientBusinessLogic.GetAll().FirstOrDefault(x => x.Login.Equals(loggin));
@@ -35,6 +40,19 @@ namespace HospitalAppointment.Service
             if (VerifyPassword(password, p.Hash) == true)
             {
                 return p;
+            }
+            return null;
+        }
+        public Doctor VerefyAuthDoc(string loggin, string password)
+        {
+            Doctor doc = _doctorBusinessLogic.GetAll().FirstOrDefault(x => x.LoginD.Equals(loggin));
+            if (doc == null)
+            {
+                return null;
+            }
+            if (VerifyPassword(password, doc.HashD) == true)
+            {
+                return doc;
             }
             return null;
         }

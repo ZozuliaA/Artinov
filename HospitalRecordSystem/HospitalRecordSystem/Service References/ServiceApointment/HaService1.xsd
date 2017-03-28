@@ -16,6 +16,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CreateHashOnServer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHashOnServerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateHashOnServerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="VerefyAuth">
     <xs:complexType>
       <xs:sequence>
@@ -31,6 +45,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="VerefyAuthDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loggin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerefyAuthDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="VerefyAuthDocResult" nillable="true" type="q3:Doctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAppoinments">
     <xs:complexType>
       <xs:sequence />
@@ -39,7 +68,7 @@
   <xs:element name="GetAppoinmentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAppoinmentsResult" nillable="true" type="q3:ArrayOfAppoinment" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAppoinmentsResult" nillable="true" type="q4:ArrayOfAppoinment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -53,28 +82,28 @@
   <xs:element name="GetAppoinmentsByDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAppoinmentsByDateResult" nillable="true" type="q4:ArrayOfAppoinment" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAppoinmentsByDateResult" nillable="true" type="q5:ArrayOfAppoinment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetAppoinmentsByPatientId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q5:guid" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q6:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetAppoinmentsByPatientIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAppoinmentsByPatientIdResult" nillable="true" type="q6:ArrayOfAppoinment" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAppoinmentsByPatientIdResult" nillable="true" type="q7:ArrayOfAppoinment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAppointment">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="appoinment" nillable="true" type="q7:Appoinment" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="appoinment" nillable="true" type="q8:Appoinment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -86,7 +115,7 @@
   <xs:element name="DeleteAppointmentById">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="appoinmentId" type="q8:guid" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="appoinmentId" type="q9:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -98,77 +127,77 @@
   <xs:element name="GetPatientByAppointmentId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="appointmentId" type="q9:guid" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="appointmentId" type="q10:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPatientByAppointmentIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetPatientByAppointmentIdResult" nillable="true" type="q10:Patient" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetPatientByAppointmentIdResult" nillable="true" type="q11:Patient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPhoneByPatientId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q11:guid" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q12:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPhoneByPatientIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetPhoneByPatientIdResult" nillable="true" type="q12:Phone" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetPhoneByPatientIdResult" nillable="true" type="q13:Phone" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPassportByPatientId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q13:guid" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q14:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPassportByPatientIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetPassportByPatientIdResult" nillable="true" type="q14:Passport" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetPassportByPatientIdResult" nillable="true" type="q15:Passport" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetAddressByPatientId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q15:guid" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q16:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetAddressByPatientIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAddressByPatientIdResult" nillable="true" type="q16:Address" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetAddressByPatientIdResult" nillable="true" type="q17:Address" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetHistoryBookByPatientId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q17:guid" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="patientId" type="q18:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetHistoryBookByPatientIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetHistoryBookByPatientIdResult" nillable="true" type="q18:HistoryBook" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetHistoryBookByPatientIdResult" nillable="true" type="q19:HistoryBook" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertPatient">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="patientEntity" nillable="true" type="q19:Patient" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="patientEntity" nillable="true" type="q20:Patient" />
         <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -181,7 +210,7 @@
   <xs:element name="InsertRoom">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="room" nillable="true" type="q20:Room" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="room" nillable="true" type="q21:Room" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -198,7 +227,7 @@
   <xs:element name="GetRoomsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetRoomsResult" nillable="true" type="q21:ArrayOfRoom" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetRoomsResult" nillable="true" type="q22:ArrayOfRoom" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -210,7 +239,7 @@
   <xs:element name="GetSpecialtiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetSpecialtiesResult" nillable="true" type="q22:ArrayOfSpecialty" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetSpecialtiesResult" nillable="true" type="q23:ArrayOfSpecialty" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -224,7 +253,7 @@
   <xs:element name="GetSpecialtyByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetSpecialtyByNameResult" nillable="true" type="q23:Specialty" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetSpecialtyByNameResult" nillable="true" type="q24:Specialty" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -250,28 +279,28 @@
   <xs:element name="GetDoctorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetDoctorsResult" nillable="true" type="q24:ArrayOfDoctor" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetDoctorsResult" nillable="true" type="q25:ArrayOfDoctor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDoctorById">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="doctoId" type="q25:guid" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="doctoId" type="q26:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDoctorByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetDoctorByIdResult" nillable="true" type="q26:Doctor" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetDoctorByIdResult" nillable="true" type="q27:Doctor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddDoctor">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="doctor" nillable="true" type="q27:Doctor" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="doctor" nillable="true" type="q28:Doctor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -283,7 +312,7 @@
   <xs:element name="AddDoctorOnContext">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="doc" nillable="true" type="q28:Doctor" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="doc" nillable="true" type="q29:Doctor" />
         <xs:element minOccurs="0" name="spesialtyId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -303,7 +332,7 @@
   <xs:element name="GetDoctorsBySpecialyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetDoctorsBySpecialyResult" nillable="true" type="q29:ArrayOfDoctor" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/HADatabaseEntity" minOccurs="0" name="GetDoctorsBySpecialyResult" nillable="true" type="q30:ArrayOfDoctor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

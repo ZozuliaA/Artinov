@@ -37,3 +37,10 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.App
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveGuidGeneratorOnIntPrimeryKey.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveDoctorRequiredSpecialty.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ReturnDoctorRequiredSpecialty.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.AddDocDaylinkAndModels.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ChangeTypesOfDaysAndTime.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveGuidGeneratorOnIntPrimeryKey.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveDoctorRequiredSpecialty.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ReturnDoctorRequiredSpecialty.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.DocTableAddRoleLoginHash.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.NothingAdd.resources

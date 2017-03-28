@@ -13,25 +13,36 @@ namespace HospitalApointmentSystem.Client
 {
     public partial class AppointmentForm : Form
     {
-        public AppointmentForm(Patient logedPatient)
+        public AppointmentForm(Patient logedUser)
         {
             InitializeComponent();
-            
-            if (logedPatient.Role == "User")
+
+            if (logedUser.Role == "User")
             {
-                var control = new UсPatient(logedPatient);
+                var control = new UсPatient(logedUser);
                 splitContainerAppointment.Panel1.Controls.Add(control);
             }
-            if (logedPatient.Role == "Admin")
+            
+            if (logedUser.Role == "Admin")
             {
-                var control = new UcAdmin(logedPatient);
+                var control = new UcAdmin(logedUser);
+                splitContainerAppointment.Panel1.Controls.Add(control);
+            }
+        }
+
+        public AppointmentForm(Doctor logedDoctor)
+        {
+            InitializeComponent();
+            if (logedDoctor.Role == "Doctor")
+            {
+                var control = new UcDoctor(logedDoctor);
                 splitContainerAppointment.Panel1.Controls.Add(control);
             }
         }
 
         private void AppointmentForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void AppointmentForm_FormClosing(object sender, FormClosingEventArgs e)

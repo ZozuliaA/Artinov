@@ -8,7 +8,7 @@ namespace HospitalAppointment.DataAccess
     {
         public override IQueryable<Doctor> GetAll()
         {
-            return Context.Doctors.Include(d => d.DaysOfReceiving);
+            return Context.Doctors.Include(t => t.DaysOfReceiving.TimeOfReceiving);
         }
 
         public void AddDoctorOnContext(Doctor doc, int specialtyId)

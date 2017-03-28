@@ -5,7 +5,6 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\Enti
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.SqlServer.dll
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.xml
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\EntityFramework.SqlServer.xml
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.csprojResolveAssemblyReference.cache
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.dll
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.pdb
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\bin\Debug\HADatabaseEntity.dll.config

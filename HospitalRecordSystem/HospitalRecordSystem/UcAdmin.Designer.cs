@@ -50,6 +50,10 @@
             this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelDocPassword = new System.Windows.Forms.Label();
+            this.tbDocPassword = new System.Windows.Forms.TextBox();
+            this.labelDocLogin = new System.Windows.Forms.Label();
+            this.tbDocLogin = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 178);
+            this.label1.Location = new System.Drawing.Point(20, 236);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 25;
@@ -91,7 +95,7 @@
             "12:00",
             "",
             ""});
-            this.clbTime.Location = new System.Drawing.Point(20, 194);
+            this.clbTime.Location = new System.Drawing.Point(23, 252);
             this.clbTime.Name = "clbTime";
             this.clbTime.Size = new System.Drawing.Size(120, 109);
             this.clbTime.TabIndex = 24;
@@ -146,7 +150,7 @@
             // 
             // btAddDoc
             // 
-            this.btAddDoc.Location = new System.Drawing.Point(272, 194);
+            this.btAddDoc.Location = new System.Drawing.Point(275, 252);
             this.btAddDoc.Name = "btAddDoc";
             this.btAddDoc.Size = new System.Drawing.Size(75, 23);
             this.btAddDoc.TabIndex = 32;
@@ -165,7 +169,7 @@
             "Fri",
             "Sat",
             "Sun"});
-            this.clbDay.Location = new System.Drawing.Point(146, 194);
+            this.clbDay.Location = new System.Drawing.Point(149, 252);
             this.clbDay.Name = "clbDay";
             this.clbDay.Size = new System.Drawing.Size(120, 94);
             this.clbDay.TabIndex = 34;
@@ -243,10 +247,46 @@
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
+            // labelDocPassword
+            // 
+            this.labelDocPassword.AutoSize = true;
+            this.labelDocPassword.Location = new System.Drawing.Point(17, 192);
+            this.labelDocPassword.Name = "labelDocPassword";
+            this.labelDocPassword.Size = new System.Drawing.Size(53, 13);
+            this.labelDocPassword.TabIndex = 39;
+            this.labelDocPassword.Text = "Password";
+            // 
+            // tbDocPassword
+            // 
+            this.tbDocPassword.Location = new System.Drawing.Point(77, 189);
+            this.tbDocPassword.Name = "tbDocPassword";
+            this.tbDocPassword.Size = new System.Drawing.Size(100, 20);
+            this.tbDocPassword.TabIndex = 38;
+            // 
+            // labelDocLogin
+            // 
+            this.labelDocLogin.AutoSize = true;
+            this.labelDocLogin.Location = new System.Drawing.Point(17, 165);
+            this.labelDocLogin.Name = "labelDocLogin";
+            this.labelDocLogin.Size = new System.Drawing.Size(33, 13);
+            this.labelDocLogin.TabIndex = 37;
+            this.labelDocLogin.Text = "Login";
+            // 
+            // tbDocLogin
+            // 
+            this.tbDocLogin.Location = new System.Drawing.Point(77, 162);
+            this.tbDocLogin.Name = "tbDocLogin";
+            this.tbDocLogin.Size = new System.Drawing.Size(100, 20);
+            this.tbDocLogin.TabIndex = 36;
+            // 
             // UcAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelDocPassword);
+            this.Controls.Add(this.tbDocPassword);
+            this.Controls.Add(this.labelDocLogin);
+            this.Controls.Add(this.tbDocLogin);
             this.Controls.Add(this.clbDay);
             this.Controls.Add(this.btAddDoc);
             this.Controls.Add(this.labelSecName);
@@ -261,7 +301,7 @@
             this.Controls.Add(this.cbChoseSpesialty);
             this.Controls.Add(this.menuStrip);
             this.Name = "UcAdmin";
-            this.Size = new System.Drawing.Size(716, 348);
+            this.Size = new System.Drawing.Size(716, 405);
             this.Load += new System.EventHandler(this.UcAdmin_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -293,5 +333,9 @@
         private System.Windows.Forms.ToolStripMenuItem roomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Label labelDocPassword;
+        private System.Windows.Forms.TextBox tbDocPassword;
+        private System.Windows.Forms.Label labelDocLogin;
+        private System.Windows.Forms.TextBox tbDocLogin;
     }
 }

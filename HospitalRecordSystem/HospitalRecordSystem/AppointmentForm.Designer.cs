@@ -39,7 +39,7 @@ namespace HospitalApointmentSystem.Client
             // 
             // btLogOut
             // 
-            this.btLogOut.Location = new System.Drawing.Point(516, 3);
+            this.btLogOut.Location = new System.Drawing.Point(681, 3);
             this.btLogOut.Name = "btLogOut";
             this.btLogOut.Size = new System.Drawing.Size(75, 23);
             this.btLogOut.TabIndex = 8;
@@ -57,13 +57,13 @@ namespace HospitalApointmentSystem.Client
             // splitContainerAppointment.Panel2
             // 
             this.splitContainerAppointment.Panel2.Controls.Add(this.btLogOut);
-            this.splitContainerAppointment.Size = new System.Drawing.Size(594, 453);
-            this.splitContainerAppointment.SplitterDistance = 411;
+            this.splitContainerAppointment.Size = new System.Drawing.Size(768, 540);
+            this.splitContainerAppointment.SplitterDistance = 489;
             this.splitContainerAppointment.TabIndex = 9;
             // 
             // AppointmentForm
             // 
-            this.ClientSize = new System.Drawing.Size(594, 453);
+            this.ClientSize = new System.Drawing.Size(768, 540);
             this.Controls.Add(this.splitContainerAppointment);
             this.Name = "AppointmentForm";
             this.Text = "SomeWorkHere";

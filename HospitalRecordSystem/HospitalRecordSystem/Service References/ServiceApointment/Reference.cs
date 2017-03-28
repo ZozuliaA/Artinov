@@ -21,11 +21,23 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetRole", ReplyAction="http://tempuri.org/IHaService/GetRoleResponse")]
         System.Threading.Tasks.Task<string> GetRoleAsync(System.Guid patientId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/CreateHashOnServer", ReplyAction="http://tempuri.org/IHaService/CreateHashOnServerResponse")]
+        string CreateHashOnServer(string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/CreateHashOnServer", ReplyAction="http://tempuri.org/IHaService/CreateHashOnServerResponse")]
+        System.Threading.Tasks.Task<string> CreateHashOnServerAsync(string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/VerefyAuth", ReplyAction="http://tempuri.org/IHaService/VerefyAuthResponse")]
         HADatabaseEntity.Patient VerefyAuth(string loggin, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/VerefyAuth", ReplyAction="http://tempuri.org/IHaService/VerefyAuthResponse")]
         System.Threading.Tasks.Task<HADatabaseEntity.Patient> VerefyAuthAsync(string loggin, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/VerefyAuthDoc", ReplyAction="http://tempuri.org/IHaService/VerefyAuthDocResponse")]
+        HADatabaseEntity.Doctor VerefyAuthDoc(string loggin, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/VerefyAuthDoc", ReplyAction="http://tempuri.org/IHaService/VerefyAuthDocResponse")]
+        System.Threading.Tasks.Task<HADatabaseEntity.Doctor> VerefyAuthDocAsync(string loggin, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetAppoinments", ReplyAction="http://tempuri.org/IHaService/GetAppoinmentsResponse")]
         HADatabaseEntity.Appoinment[] GetAppoinments();
@@ -189,12 +201,28 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
             return base.Channel.GetRoleAsync(patientId);
         }
         
+        public string CreateHashOnServer(string password) {
+            return base.Channel.CreateHashOnServer(password);
+        }
+        
+        public System.Threading.Tasks.Task<string> CreateHashOnServerAsync(string password) {
+            return base.Channel.CreateHashOnServerAsync(password);
+        }
+        
         public HADatabaseEntity.Patient VerefyAuth(string loggin, string password) {
             return base.Channel.VerefyAuth(loggin, password);
         }
         
         public System.Threading.Tasks.Task<HADatabaseEntity.Patient> VerefyAuthAsync(string loggin, string password) {
             return base.Channel.VerefyAuthAsync(loggin, password);
+        }
+        
+        public HADatabaseEntity.Doctor VerefyAuthDoc(string loggin, string password) {
+            return base.Channel.VerefyAuthDoc(loggin, password);
+        }
+        
+        public System.Threading.Tasks.Task<HADatabaseEntity.Doctor> VerefyAuthDocAsync(string loggin, string password) {
+            return base.Channel.VerefyAuthDocAsync(loggin, password);
         }
         
         public HADatabaseEntity.Appoinment[] GetAppoinments() {

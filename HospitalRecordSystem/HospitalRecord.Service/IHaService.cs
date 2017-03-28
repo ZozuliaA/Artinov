@@ -14,7 +14,11 @@ namespace HospitalAppointment.Service
         [OperationContract]
         string GetRole(Guid patientId);
         [OperationContract]
+        string CreateHashOnServer(string password);
+        [OperationContract]
         Patient VerefyAuth(string loggin, string password);
+        [OperationContract]
+        Doctor VerefyAuthDoc(string loggin, string password);
 
 
         //----Appointment

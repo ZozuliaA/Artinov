@@ -43,6 +43,7 @@ namespace HospitalApointmentSystem.Client
             this.tbLogin.Name = "tbLogin";
             this.tbLogin.Size = new System.Drawing.Size(158, 20);
             this.tbLogin.TabIndex = 0;
+            this.tbLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbLogin_KeyDown);
             // 
             // tbPassword
             // 
@@ -92,8 +93,8 @@ namespace HospitalApointmentSystem.Client
             this.Controls.Add(this.tbLogin);
             this.Name = "AuthorizatiomForm";
             this.Text = "Authorization";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AuthorizatiomForm_FormClosing);
             this.Load += new System.EventHandler(this.AuthorizatiomForm_Load);
-            this.FormClosing += new FormClosingEventHandler(AuthorizatiomForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

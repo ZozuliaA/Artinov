@@ -16,8 +16,6 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HADatabaseEntity.pdb
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.AppointmentForm.resources
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.AuthorizatiomForm.resources
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UcAdmin.resources
-E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UсPatient.resources
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalApointmentSystem.Client.exe.config
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalApointmentSystem.Client.exe
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\bin\Debug\HospitalApointmentSystem.Client.pdb
@@ -38,3 +36,7 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\Hospit
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.csproj.GenerateResource.Cache
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.exe
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UcAdmin.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UсPatient.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UcDoctor.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.EditDoctor.resources

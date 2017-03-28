@@ -13,11 +13,23 @@
   <wsdl:message name="IHaService_GetRole_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRoleResponse" />
   </wsdl:message>
+  <wsdl:message name="IHaService_CreateHashOnServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHashOnServer" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_CreateHashOnServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHashOnServerResponse" />
+  </wsdl:message>
   <wsdl:message name="IHaService_VerefyAuth_InputMessage">
     <wsdl:part name="parameters" element="tns:VerefyAuth" />
   </wsdl:message>
   <wsdl:message name="IHaService_VerefyAuth_OutputMessage">
     <wsdl:part name="parameters" element="tns:VerefyAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_VerefyAuthDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerefyAuthDoc" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_VerefyAuthDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerefyAuthDocResponse" />
   </wsdl:message>
   <wsdl:message name="IHaService_GetAppoinments_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAppoinments" />
@@ -150,9 +162,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRole" message="tns:IHaService_GetRole_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoleResponse" message="tns:IHaService_GetRole_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CreateHashOnServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/CreateHashOnServer" message="tns:IHaService_CreateHashOnServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/CreateHashOnServerResponse" message="tns:IHaService_CreateHashOnServer_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="VerefyAuth">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/VerefyAuth" message="tns:IHaService_VerefyAuth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/VerefyAuthResponse" message="tns:IHaService_VerefyAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerefyAuthDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/VerefyAuthDoc" message="tns:IHaService_VerefyAuthDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/VerefyAuthDocResponse" message="tns:IHaService_VerefyAuthDoc_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAppoinments">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetAppoinments" message="tns:IHaService_GetAppoinments_InputMessage" />
@@ -250,8 +270,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateHashOnServer">
+      <soap:operation soapAction="http://tempuri.org/IHaService/CreateHashOnServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="VerefyAuth">
       <soap:operation soapAction="http://tempuri.org/IHaService/VerefyAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerefyAuthDoc">
+      <soap:operation soapAction="http://tempuri.org/IHaService/VerefyAuthDoc" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

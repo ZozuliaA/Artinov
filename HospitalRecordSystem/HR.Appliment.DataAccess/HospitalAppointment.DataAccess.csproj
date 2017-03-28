@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HaInitializer.cs" />
     <Compile Include="Migrations\201703131749111_AddDocDaylinkAndModels.cs" />
     <Compile Include="Migrations\201703131749111_AddDocDaylinkAndModels.Designer.cs">
       <DependentUpon>201703131749111_AddDocDaylinkAndModels.cs</DependentUpon>
@@ -68,6 +69,14 @@
     <Compile Include="Migrations\201703141821292_ReturnDoctorRequiredSpecialty.cs" />
     <Compile Include="Migrations\201703141821292_ReturnDoctorRequiredSpecialty.Designer.cs">
       <DependentUpon>201703141821292_ReturnDoctorRequiredSpecialty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703280943071_DocTableAddRoleLoginHash.cs" />
+    <Compile Include="Migrations\201703280943071_DocTableAddRoleLoginHash.Designer.cs">
+      <DependentUpon>201703280943071_DocTableAddRoleLoginHash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703281504276_NothingAdd.cs" />
+    <Compile Include="Migrations\201703281504276_NothingAdd.Designer.cs">
+      <DependentUpon>201703281504276_NothingAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\AppointmentRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -129,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703141821292_ReturnDoctorRequiredSpecialty.resx">
       <DependentUpon>201703141821292_ReturnDoctorRequiredSpecialty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280943071_DocTableAddRoleLoginHash.resx">
+      <DependentUpon>201703280943071_DocTableAddRoleLoginHash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703281504276_NothingAdd.resx">
+      <DependentUpon>201703281504276_NothingAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

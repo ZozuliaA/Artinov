@@ -14,6 +14,15 @@ namespace HospitalApointmentSystem.Client
 
         private void btLogin_Click(object sender, System.EventArgs e)
         {
+            
+            /*Patient patient = new Patient();
+            patient.Role = "Doctor";
+            Doctor doc = new Doctor();
+            doc.Role = "Doctor";
+            this.Hide();
+            AppointmentForm appointmentForm = new AppointmentForm(doc);
+            appointmentForm.Show();*/
+
             if (tbLogin.Text.Trim() != "" && tbLogin.Text.Trim().Length > 4 && tbLogin.Text.Trim().Length < 31 && tbPassword.Text.Trim() != ""
                 && tbPassword.Text.Trim().Length > 4)
             {
@@ -21,6 +30,7 @@ namespace HospitalApointmentSystem.Client
                 {
                     this.Enabled = false;
                     Patient patient = client.VerefyAuth(tbLogin.Text.Trim(), tbPassword.Text.Trim());
+                    Doctor doc = client.VerefyAuthDoc(tbLogin.Text.Trim(), tbPassword.Text.Trim());
                     if (patient != null)
                     {
                         MessageBox.Show("Login Successful!");
@@ -28,9 +38,14 @@ namespace HospitalApointmentSystem.Client
                         AppointmentForm appointmentForm = new AppointmentForm(patient);
                         appointmentForm.Show();
                     }
+                    else if(doc != null)
+                    {
+                        this.Hide();
+                        AppointmentForm appointmentForm = new AppointmentForm(doc);
+                        appointmentForm.Show();
+                    }
                     else
                         MessageBox.Show("Invalid Login or Password");
-                    
                 }
             }
             else
@@ -70,7 +85,15 @@ namespace HospitalApointmentSystem.Client
 
         private void AuthorizatiomForm_Load(object sender, System.EventArgs e)
         {
+            tbPassword.Text = "111111";
+        }
 
+        private void tbLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btLogin.PerformClick();
+            }
         }
     }
 }

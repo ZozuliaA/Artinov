@@ -24,3 +24,9 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\Hospit
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalApointment.Service.csprojResolveAssemblyReference.cache
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalAppointment.Service.dll
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalRecord.Service\obj\Debug\HospitalAppointment.Service.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.SqlServer.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.DataAccess.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Logic.dll
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.Logic.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\HospitalAppointment.DataAccess.pdb
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecord.Service\bin\EntityFramework.SqlServer.xml

@@ -31,6 +31,9 @@ namespace HospitalApointmentSystem.Client
             doc.FirstName = tbDocName.Text;
             doc.LastName = tbLastName.Text;
             doc.SecondName = tbSecondName.Text;
+            doc.LoginD = tbDocLogin.Text;
+            doc.Role = "Doctor";
+            
 
             DaysOfReceiving dor= new DaysOfReceiving();
             if (clbDay.GetItemCheckState(0) == CheckState.Checked) dor.Mondey = true;
@@ -54,6 +57,7 @@ namespace HospitalApointmentSystem.Client
             using (var client = new HaServiceClient())
             {
                 //doc.Specialty = client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString());//. SelectedText);
+                doc.HashD = client.CreateHashOnServer(tbDocPassword.Text);
                 client.AddDoctorOnContext(doc, client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString()).SpecialtyId);
             }
         }
