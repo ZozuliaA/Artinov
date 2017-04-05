@@ -11,6 +11,6 @@ namespace HADatabaseEntity
         public int SpecialtyId { get; set; } 
         public string SpecialtyName { get; set; } 
         public string SpecialtyDescription { get; set; }
-        public virtual ICollection<Doctor> Doctors { get; set; }
+       // public virtual ICollection<Doctor> Doctors { get; set; }
     }
 }

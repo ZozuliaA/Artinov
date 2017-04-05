@@ -44,8 +44,8 @@
             this.lvPatientApp = new System.Windows.Forms.ListView();
             this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btAddAppointment = new System.Windows.Forms.Button();
             this.btCanselApp = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -89,8 +89,8 @@
             // mcThisMonth
             // 
             this.mcThisMonth.Location = new System.Drawing.Point(200, 24);
-            this.mcThisMonth.MaxDate = new System.DateTime(2017, 3, 31, 0, 0, 0, 0);
-            this.mcThisMonth.MinDate = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
+            this.mcThisMonth.MaxDate = new System.DateTime(2017, 6, 1, 0, 0, 0, 0);
+            this.mcThisMonth.MinDate = new System.DateTime(2017, 4, 4, 0, 0, 0, 0);
             this.mcThisMonth.Name = "mcThisMonth";
             this.mcThisMonth.TabIndex = 16;
             this.mcThisMonth.TrailingForeColor = System.Drawing.SystemColors.Highlight;
@@ -202,16 +202,16 @@
             this.colTime.Text = "Time";
             this.colTime.Width = 84;
             // 
-            // colRoom
-            // 
-            this.colRoom.DisplayIndex = 2;
-            this.colRoom.Text = "Room";
-            // 
             // colDoc
             // 
             this.colDoc.DisplayIndex = 3;
             this.colDoc.Text = "Doctor";
             this.colDoc.Width = 254;
+            // 
+            // colRoom
+            // 
+            this.colRoom.DisplayIndex = 2;
+            this.colRoom.Text = "Room";
             // 
             // btAddAppointment
             // 
@@ -221,7 +221,7 @@
             this.btAddAppointment.TabIndex = 31;
             this.btAddAppointment.Text = "Appontment";
             this.btAddAppointment.UseVisualStyleBackColor = true;
-            this.btAddAppointment.Click += new System.EventHandler(this.button1_Click);
+            this.btAddAppointment.Click += new System.EventHandler(this.btAddAppointment_Click);
             // 
             // btCanselApp
             // 

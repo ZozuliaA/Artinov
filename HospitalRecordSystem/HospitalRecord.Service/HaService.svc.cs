@@ -18,6 +18,8 @@ namespace HospitalAppointment.Service
         private readonly PatientBusinessLogic _patientBusinessLogic = new PatientBusinessLogic();
         private readonly RoomBusinessLogic _roomBusinessLogic = new RoomBusinessLogic();
         private readonly SpecialtyBusinessLogic _specialtyBusinessLogic = new SpecialtyBusinessLogic();
+        private readonly DorBusinessLogic _dorBusinessLogic = new DorBusinessLogic();
+
 
         //-----Auth-----------------------------
         public string GetRole(Guid patientId)
@@ -66,6 +68,7 @@ namespace HospitalAppointment.Service
             blP.Insert(patientEntity);
         }
 
+        //-----Room------------------------------------------------
         public void InsertRoom(Room room)
         {
             _roomBusinessLogic.Insert(room);
@@ -73,9 +76,23 @@ namespace HospitalAppointment.Service
 
         public IQueryable<Room> GetRooms()
         {
-            return _roomBusinessLogic.GetAll();
+            return _roomBusinessLogic.GetAll().Where(un => un.Unavaible.Equals(false));
         }
 
+        public Room GetRoomById(Guid roomId)
+        {
+            return _roomBusinessLogic.GetById(roomId);
+        }
+
+        public void EditRoom(Room room)
+        {
+            _roomBusinessLogic.Update(room);
+        }
+
+        public void DeleteRoomById(Guid roomId)
+        {
+            _roomBusinessLogic.DeleteById(roomId);
+        }
 
         //-----Appointment----------------------------------------
         public IQueryable<Appoinment> GetAppoinments()
@@ -104,6 +121,16 @@ namespace HospitalAppointment.Service
         }
 
         //--------Patient-------------------------------------------
+        public IQueryable<Patient> GetAllPatients()
+        {
+            return _patientBusinessLogic.GetAll();
+        }
+
+        public void AddPatient(Patient patient)
+        {
+            _patientBusinessLogic.Insert(patient);
+        }
+
         public Patient GetPatientByAppointmentId(Guid appointmentId)
         {
             throw new NotImplementedException();
@@ -129,6 +156,11 @@ namespace HospitalAppointment.Service
             throw new NotImplementedException();
         }
 
+        public void DeletePatient(Guid patientId)
+        {
+            _patientBusinessLogic.DeleteById(patientId);
+        }
+
         //------Specialty--------------
         public IQueryable<Specialty> GetSpecialties()
         {
@@ -145,10 +177,16 @@ namespace HospitalAppointment.Service
             return _specialtyBusinessLogic.GetAll().FirstOrDefault(x => x.SpecialtyName.Equals(specialty)).SpecialtyId;
         }
 
-        //-----Doctor-------------------
-        public IQueryable<Doctor> GetDoctors()
+        public Specialty GetSpecialtyById(int spesialtyId)
         {
-            return _doctorBusinessLogic.GetAll();
+            return _specialtyBusinessLogic.GetAll().FirstOrDefault(id => id.SpecialtyId.Equals(spesialtyId));
+        }
+
+        //-----Doctor-------------------
+        public List<Doctor> GetDoctors()
+        {
+            var d =  _doctorBusinessLogic.GetAll().ToList();
+            return d;
         }
 
         public Doctor GetDoctorById(Guid doctoId)
@@ -168,6 +206,28 @@ namespace HospitalAppointment.Service
         public void AddDoctorOnContext(Doctor doc, int spesialtyId)
         {
             _doctorBusinessLogic.AddDoctorOnContext(doc, spesialtyId);
+        }
+
+        public void EditDoctor(Doctor entityDoctor)
+        {
+            _doctorBusinessLogic.Update(entityDoctor);
+        }
+
+        public void DeleteDoctorById(Guid doctorId)
+        {
+            _doctorBusinessLogic.DeleteById(doctorId);
+        }
+
+        //-----Days---------------------------------------------
+        public void EditDays(DaysOfReceiving entityDaysOfReceiving)
+        {
+            _dorBusinessLogic.Update(entityDaysOfReceiving);
+        }
+
+        //----Time----------------------------------------------
+        public void EditTime(TimeOfReceiving entityOfReceiving)
+        {
+
         }
 
         //***********************************************************************************************************

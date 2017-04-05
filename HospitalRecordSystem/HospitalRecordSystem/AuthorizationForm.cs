@@ -95,5 +95,13 @@ namespace HospitalApointmentSystem.Client
                 btLogin.PerformClick();
             }
         }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btLogin.PerformClick();
+            }
+        }
     }
 }

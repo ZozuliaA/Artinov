@@ -35,5 +35,10 @@ namespace HospitalAppointment.Logic
         {
             Repository.DeleteById(entityId);
         }
+
+        public void Update(TEntity entity)
+        {
+            Repository.Update(entity);
+        }
     }
 }

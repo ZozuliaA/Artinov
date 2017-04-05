@@ -98,19 +98,12 @@
   <xs:element name="TimeOfReceiving" nillable="true" type="tns:TimeOfReceiving" />
   <xs:complexType name="Specialty">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Doctors" nillable="true" type="tns:ArrayOfDoctor" />
       <xs:element minOccurs="0" name="SpecialtyDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialtyId" type="xs:int" />
       <xs:element minOccurs="0" name="SpecialtyName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Specialty" nillable="true" type="tns:Specialty" />
-  <xs:complexType name="ArrayOfDoctor">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Doctor" nillable="true" type="tns:Doctor" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDoctor" nillable="true" type="tns:ArrayOfDoctor" />
   <xs:complexType name="ArrayOfAppoinment">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Appoinment" nillable="true" type="tns:Appoinment" />
@@ -138,6 +131,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Room" nillable="true" type="tns:Room" />
+  <xs:complexType name="ArrayOfPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
   <xs:complexType name="ArrayOfRoom">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Room" nillable="true" type="tns:Room" />
@@ -150,4 +149,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfSpecialty" nillable="true" type="tns:ArrayOfSpecialty" />
+  <xs:complexType name="ArrayOfDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Doctor" nillable="true" type="tns:Doctor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDoctor" nillable="true" type="tns:ArrayOfDoctor" />
 </xs:schema>

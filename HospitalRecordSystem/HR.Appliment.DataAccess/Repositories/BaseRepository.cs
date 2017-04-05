@@ -42,7 +42,7 @@ namespace HospitalAppointment.DataAccess
             Context.SaveChanges();
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             Context.Entry(entity).State = EntityState.Modified;
             Context.SaveChanges();

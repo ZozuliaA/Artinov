@@ -100,10 +100,10 @@
             // labelInfo
             // 
             this.labelInfo.AutoSize = true;
-            this.labelInfo.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInfo.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelInfo.Location = new System.Drawing.Point(12, 9);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(229, 18);
+            this.labelInfo.Size = new System.Drawing.Size(267, 18);
             this.labelInfo.TabIndex = 6;
             this.labelInfo.Text = "Change fields and press \"Save Changes\"";
             // 
@@ -166,9 +166,11 @@
             this.btSaveChanges.TabIndex = 39;
             this.btSaveChanges.Text = "Save Changes";
             this.btSaveChanges.UseVisualStyleBackColor = true;
+            this.btSaveChanges.Click += new System.EventHandler(this.btSaveChanges_Click);
             // 
             // btCancel
             // 
+            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancel.Location = new System.Drawing.Point(202, 385);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(82, 23);

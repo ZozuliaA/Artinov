@@ -61,6 +61,18 @@
   <wsdl:message name="IHaService_DeleteAppointmentById_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteAppointmentByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IHaService_GetAllPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatients" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetAllPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_AddPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatient" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_AddPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatientResponse" />
+  </wsdl:message>
   <wsdl:message name="IHaService_GetPatientByAppointmentId_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPatientByAppointmentId" />
   </wsdl:message>
@@ -91,6 +103,12 @@
   <wsdl:message name="IHaService_GetHistoryBookByPatientId_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetHistoryBookByPatientIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IHaService_DeletePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatient" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_DeletePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientResponse" />
+  </wsdl:message>
   <wsdl:message name="IHaService_InsertPatient_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertPatient" />
   </wsdl:message>
@@ -109,6 +127,24 @@
   <wsdl:message name="IHaService_GetRooms_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRoomsResponse" />
   </wsdl:message>
+  <wsdl:message name="IHaService_GetRoomById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomById" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetRoomById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditRoom" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_DeleteRoomById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoomById" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_DeleteRoomById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoomByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IHaService_GetSpecialties_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSpecialties" />
   </wsdl:message>
@@ -126,6 +162,12 @@
   </wsdl:message>
   <wsdl:message name="IHaService_GetSpecialtyIdByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSpecialtyIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetSpecialtyById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtyById" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetSpecialtyById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialtyByIdResponse" />
   </wsdl:message>
   <wsdl:message name="IHaService_GetDoctors_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDoctors" />
@@ -156,6 +198,30 @@
   </wsdl:message>
   <wsdl:message name="IHaService_GetDoctorsBySpecialy_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDoctorsBySpecialyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_DeleteDoctorById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDoctorById" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_DeleteDoctorById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDoctorByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditDays_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditDays" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditDays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditTime" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_EditTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditTimeResponse" />
   </wsdl:message>
   <wsdl:portType name="IHaService">
     <wsdl:operation name="GetRole">
@@ -194,6 +260,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/DeleteAppointmentById" message="tns:IHaService_DeleteAppointmentById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/DeleteAppointmentByIdResponse" message="tns:IHaService_DeleteAppointmentById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllPatients">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetAllPatients" message="tns:IHaService_GetAllPatients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetAllPatientsResponse" message="tns:IHaService_GetAllPatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/AddPatient" message="tns:IHaService_AddPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/AddPatientResponse" message="tns:IHaService_AddPatient_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPatientByAppointmentId">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetPatientByAppointmentId" message="tns:IHaService_GetPatientByAppointmentId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetPatientByAppointmentIdResponse" message="tns:IHaService_GetPatientByAppointmentId_OutputMessage" />
@@ -214,6 +288,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetHistoryBookByPatientId" message="tns:IHaService_GetHistoryBookByPatientId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetHistoryBookByPatientIdResponse" message="tns:IHaService_GetHistoryBookByPatientId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DeletePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/DeletePatient" message="tns:IHaService_DeletePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/DeletePatientResponse" message="tns:IHaService_DeletePatient_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertPatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/InsertPatient" message="tns:IHaService_InsertPatient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/InsertPatientResponse" message="tns:IHaService_InsertPatient_OutputMessage" />
@@ -226,6 +304,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRooms" message="tns:IHaService_GetRooms_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoomsResponse" message="tns:IHaService_GetRooms_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRoomById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRoomById" message="tns:IHaService_GetRoomById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoomByIdResponse" message="tns:IHaService_GetRoomById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/EditRoom" message="tns:IHaService_EditRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/EditRoomResponse" message="tns:IHaService_EditRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoomById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/DeleteRoomById" message="tns:IHaService_DeleteRoomById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/DeleteRoomByIdResponse" message="tns:IHaService_DeleteRoomById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetSpecialties">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetSpecialties" message="tns:IHaService_GetSpecialties_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetSpecialtiesResponse" message="tns:IHaService_GetSpecialties_OutputMessage" />
@@ -237,6 +327,10 @@
     <wsdl:operation name="GetSpecialtyIdByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetSpecialtyIdByName" message="tns:IHaService_GetSpecialtyIdByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetSpecialtyIdByNameResponse" message="tns:IHaService_GetSpecialtyIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtyById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetSpecialtyById" message="tns:IHaService_GetSpecialtyById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetSpecialtyByIdResponse" message="tns:IHaService_GetSpecialtyById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDoctors">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetDoctors" message="tns:IHaService_GetDoctors_InputMessage" />
@@ -257,6 +351,22 @@
     <wsdl:operation name="GetDoctorsBySpecialy">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetDoctorsBySpecialy" message="tns:IHaService_GetDoctorsBySpecialy_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetDoctorsBySpecialyResponse" message="tns:IHaService_GetDoctorsBySpecialy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/EditDoctor" message="tns:IHaService_EditDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/EditDoctorResponse" message="tns:IHaService_EditDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoctorById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/DeleteDoctorById" message="tns:IHaService_DeleteDoctorById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/DeleteDoctorByIdResponse" message="tns:IHaService_DeleteDoctorById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/EditDays" message="tns:IHaService_EditDays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/EditDaysResponse" message="tns:IHaService_EditDays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/EditTime" message="tns:IHaService_EditTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/EditTimeResponse" message="tns:IHaService_EditTime_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHaService" type="tns:IHaService">
@@ -342,6 +452,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllPatients">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetAllPatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatient">
+      <soap:operation soapAction="http://tempuri.org/IHaService/AddPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetPatientByAppointmentId">
       <soap:operation soapAction="http://tempuri.org/IHaService/GetPatientByAppointmentId" style="document" />
       <wsdl:input>
@@ -387,6 +515,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeletePatient">
+      <soap:operation soapAction="http://tempuri.org/IHaService/DeletePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertPatient">
       <soap:operation soapAction="http://tempuri.org/IHaService/InsertPatient" style="document" />
       <wsdl:input>
@@ -414,6 +551,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRoomById">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetRoomById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditRoom">
+      <soap:operation soapAction="http://tempuri.org/IHaService/EditRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoomById">
+      <soap:operation soapAction="http://tempuri.org/IHaService/DeleteRoomById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetSpecialties">
       <soap:operation soapAction="http://tempuri.org/IHaService/GetSpecialties" style="document" />
       <wsdl:input>
@@ -434,6 +598,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSpecialtyIdByName">
       <soap:operation soapAction="http://tempuri.org/IHaService/GetSpecialtyIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialtyById">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetSpecialtyById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -479,6 +652,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetDoctorsBySpecialy">
       <soap:operation soapAction="http://tempuri.org/IHaService/GetDoctorsBySpecialy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDoctor">
+      <soap:operation soapAction="http://tempuri.org/IHaService/EditDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoctorById">
+      <soap:operation soapAction="http://tempuri.org/IHaService/DeleteDoctorById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDays">
+      <soap:operation soapAction="http://tempuri.org/IHaService/EditDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTime">
+      <soap:operation soapAction="http://tempuri.org/IHaService/EditTime" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

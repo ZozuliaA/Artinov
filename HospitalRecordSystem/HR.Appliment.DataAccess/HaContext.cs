@@ -18,8 +18,8 @@ namespace HospitalAppointment.DataAccess
             modelBuilder.Entity<Doctor>().HasRequired(x => x.Specialty);
 
 
-            modelBuilder.Entity<Specialty>().HasOptional(x => x.Doctors);
-            modelBuilder.Entity<Specialty>().HasMany(x => x.Doctors);
+            //modelBuilder.Entity<Specialty>().HasOptional(x => x.Doctors);
+            //modelBuilder.Entity<Specialty>().HasMany(x => x.Doctors);
 
 
 

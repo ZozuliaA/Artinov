@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomBusinessLogic.cs" />
     <Compile Include="SpecialtyBusinessLogic.cs" />
+    <Compile Include="TimeBusinessLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HR.Appliment.DataAccess\HospitalAppointment.DataAccess.csproj">

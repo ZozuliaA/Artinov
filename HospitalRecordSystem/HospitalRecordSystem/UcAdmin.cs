@@ -16,6 +16,76 @@ namespace HospitalApointmentSystem.Client
 
         private void UcAdmin_Load(object sender, EventArgs e)
         {
+            RefreshForm();
+        }
+        public void RefreshForm()
+        {
+            FillRoomElements();
+            FillCbChoseSpesialty();
+            FillRoomListView();
+            FillPatientListView();
+            FillDoctorListView();
+        }
+
+        private void FillDoctorListView()
+        {
+            lvDoctors.Items.Clear();
+
+            using (var client = new HaServiceClient())
+            {
+                Doctor[] doors = client.GetDoctors();
+                
+
+                foreach (var item in doors)
+                {
+                    var spesialty = client.GetSpecialtyById(item.Specialty.SpecialtyId);
+                    ListViewItem lvItem = new ListViewItem(spesialty.SpecialtyName);
+                    lvItem.SubItems.Add(item.LastName);//.ToString());
+                    lvItem.SubItems.Add(item.FirstName);//.ToString());
+                    lvItem.SubItems.Add(item.SecondName);
+                    lvItem.SubItems.Add(item.LoginD);
+                    lvItem.SubItems.Add(item.DoctorId.ToString());
+                    lvDoctors.Items.Add(lvItem);
+                }
+            }
+        }
+
+        private void FillPatientListView()
+        {
+            lvPatients.Items.Clear();
+
+            using (var client = new HaServiceClient())
+            {
+                var patients = client.GetAllPatients();
+                
+                foreach (var item in patients)
+                {
+                    ListViewItem lvItem = new ListViewItem(item.FirstName);
+                    lvItem.SubItems.Add(item.LastName);//.ToString());
+                    lvItem.SubItems.Add(item.SecondName);
+                    lvItem.SubItems.Add(item.Email);
+                    lvItem.SubItems.Add(item.Login);
+                    lvItem.SubItems.Add(item.Phone.home);
+                    lvItem.SubItems.Add(item.Phone.mobile);
+                    lvItem.SubItems.Add(item.Phone.work);
+                    lvItem.SubItems.Add(item.HistoryBook.BookNumber.ToString());
+                    lvItem.SubItems.Add(item.Address.StreetName.ToString());
+                    lvItem.SubItems.Add(item.PatientId.ToString());
+                    lvPatients.Items.Add(lvItem);
+                }
+            }
+        }
+
+        private void FillRoomElements()
+        {
+            labelRoomError.Text = "";
+            tbRoomNumber.Clear();
+            tbRoomType.Clear();
+            rbNo.Select();
+        }
+
+        private void FillCbChoseSpesialty()
+        {
             using (var client = new HaServiceClient())
             {
                 foreach (var item in client.GetSpecialties())
@@ -60,11 +130,182 @@ namespace HospitalApointmentSystem.Client
                 doc.HashD = client.CreateHashOnServer(tbDocPassword.Text);
                 client.AddDoctorOnContext(doc, client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString()).SpecialtyId);
             }
+            FillDoctorListView();
         }
-
-        private void cbDay_CheckedChanged(object sender, EventArgs e)
+        
+        
+        private void FillRoomListView()
         {
+            lvRooms.Items.Clear();
+            
+            using (var client = new HaServiceClient())
+            {
+                var rooms = client.GetRooms();
 
+                foreach (var item in rooms)
+                {
+                    ListViewItem lvItem = new ListViewItem(item.RoomNumber.ToString());
+                    lvItem.SubItems.Add(item.Type);//.ToString());
+                    lvItem.SubItems.Add(item.Unavaible.ToString());
+                    lvItem.SubItems.Add(item.RoomId.ToString());
+                    lvRooms.Items.Add(lvItem);
+                }
+             }
         }
+
+        private void btAddRoom_Click(object sender, EventArgs e)
+        {
+            Room room = new Room();
+            room.RoomNumber = int.Parse(tbRoomNumber.Text);
+            room.Type = tbRoomType.Text;
+
+            if (rbYes.Checked == true) room.Unavaible = true; else room.Unavaible = false;
+            using (var client = new HaServiceClient())
+            {
+                client.InsertRoom(room);
+            }
+            RefreshForm();
+        }
+
+        private void btRoomEdit_Click(object sender, EventArgs e)
+        {
+            int selectedRoomsCount = lvRooms.SelectedItems.Count;
+            if (selectedRoomsCount != 0)
+            {
+                ListViewItem selectedRoom = lvRooms.SelectedItems[0];
+                Guid selectedId = Guid.Parse(selectedRoom.SubItems[3].Text);
+                EditRoom editRoomForm = new EditRoom(selectedId);
+                if (editRoomForm.ShowDialog() == DialogResult.OK)
+                {
+                    FillRoomListView();
+                }
+            }
+        }
+
+        private void btpAddPatient_Click(object sender, EventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.FirstName = tbpName.Text;
+            patient.SecondName = tbpPoB.Text;
+            patient.LastName = tbpSurName.Text;
+            patient.Email = tbpEmail.Text;
+            patient.Login = tbpLogin.Text;
+            //patient.Hash = "hash";
+            patient.Role = "User";
+
+            Phone phone = new Phone();
+            phone.home = tbpHomePhone.Text;
+            phone.mobile = tbpMobilePhone.Text;
+            phone.work = tbpWorkPhone.Text;
+
+            patient.Phone = phone;
+
+            Passport passport = new Passport();
+            passport.BDay = int.Parse(tbpBday.Text);
+            passport.BMonth = int.Parse(tbpBmonth.Text);
+            passport.BYear = int.Parse(tbpByear.Text);
+            passport.DayIoP = int.Parse(tbpDayIoP.Text);
+            passport.SeriesA = tbpPassSereise.Text;
+            passport.SeriesN = int.Parse(tbpSereiseNumber.Text);
+            passport.YearIoP = int.Parse(tbpYearIoP.Text);
+
+            patient.Passport = passport;
+
+            Address address = new Address();
+            address.ApartamentNumber = int.Parse(tbpAn.Text);
+            address.StreetName = tbpStreet.Text;
+
+            patient.Address = address;
+
+            HistoryBook historyBook = new HistoryBook();
+            historyBook.BookNumber = int.Parse(tbpHisBookNum.Text);
+
+            patient.HistoryBook = historyBook;
+
+            using (var client = new HaServiceClient())
+            {
+                patient.Hash = client.CreateHashOnServer("111111");
+                client.AddPatient(patient);
+            }
+
+            FillPatientListView();
+        }
+
+        private void btRoomDelete_Click(object sender, EventArgs e)
+        {
+            int selectedRoomsCount = lvRooms.SelectedItems.Count;
+            if (selectedRoomsCount != 0)
+            {
+                ListViewItem selectedRoom = lvRooms.SelectedItems[0];
+                Guid selectedId = Guid.Parse(selectedRoom.SubItems[3].Text);
+                var confirmResult = MessageBox.Show("Are you sure to delete this room?\nRoom Number " + int.Parse(selectedRoom.SubItems[0].Text), "Confirm edit!", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    using (var client = new HaServiceClient())
+                    {
+                        client.DeleteRoomById(selectedId);
+                    }
+                    FillRoomListView();
+
+                }
+                else
+                {
+                    //DialogResult = DialogResult.None;
+                    return;
+                }
+                
+            }
+        }
+
+        private void btpDelete_Click(object sender, EventArgs e)
+        {
+            int selectedPatientsCount = lvPatients.SelectedItems.Count;
+            if (selectedPatientsCount != 0)
+            {
+                ListViewItem selectedPatient = lvPatients.SelectedItems[0];
+                var ddd = selectedPatient.SubItems[10].Text;
+                Guid selectedId = Guid.Parse(selectedPatient.SubItems[10].Text);
+                var confirmResult = MessageBox.Show("Are you sure to delete this patient?\nPatient login " + selectedPatient.SubItems[4].Text, "Confirm edit!", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    using (var client = new HaServiceClient())
+                    {
+                        client.DeletePatient(selectedId);
+                    }
+                    FillPatientListView();
+                }
+                else
+                {
+                    //DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+        }
+
+        private void btdDelete_Click(object sender, EventArgs e)
+        {
+            int selectedDoctorssCount = lvDoctors.SelectedItems.Count;
+            if (selectedDoctorssCount != 0)
+            {
+                ListViewItem selectedDoctor = lvDoctors.SelectedItems[0];
+                //var ddd = selectedPatient.SubItems[10].Text;
+                Guid selectedId = Guid.Parse(selectedDoctor.SubItems[5].Text);
+                var confirmResult = MessageBox.Show("Are you sure to delete this Doctor?\nDoctor login " + selectedDoctor.SubItems[3].Text, "Confirm edit!", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    using (var client = new HaServiceClient())
+                    {
+                        client.DeleteDoctorById(selectedId);
+                    }
+                    FillDoctorListView();
+                }
+                else
+                {
+                    //DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+        }
+
     }
 }

@@ -36,11 +36,11 @@ namespace HospitalAppointment.Service
         void DeleteAppointmentById(Guid appoinmentId);
 
 
-
-
-
-
         //----Patient
+        [OperationContract]
+        IQueryable<Patient> GetAllPatients();
+        [OperationContract]
+        void AddPatient(Patient patient);
         [OperationContract]
         Patient GetPatientByAppointmentId(Guid appointmentId);
         [OperationContract]
@@ -51,6 +51,8 @@ namespace HospitalAppointment.Service
         Address GetAddressByPatientId(Guid patientId);
         [OperationContract]
         HistoryBook GetHistoryBookByPatientId(Guid patientId);
+        [OperationContract]
+        void DeletePatient(Guid patientId);
 
         [OperationContract]
         void InsertPatient(Patient patientEntity , string password);
@@ -60,6 +62,14 @@ namespace HospitalAppointment.Service
         void InsertRoom(Room room);
         [OperationContract]
         IQueryable<Room> GetRooms();
+
+        [OperationContract]
+        Room GetRoomById(Guid roomId);
+        [OperationContract]
+        void EditRoom(Room room);
+
+        [OperationContract]
+        void DeleteRoomById(Guid roomId);
 
         //----Specialty------------
         [OperationContract]
@@ -71,9 +81,12 @@ namespace HospitalAppointment.Service
         [OperationContract]
         int GetSpecialtyIdByName(string specialty);
 
+        [OperationContract]
+        Specialty GetSpecialtyById(int spesialtyId);
+
         //-----Doctor--------------
         [OperationContract]
-        IQueryable<Doctor> GetDoctors();
+        List<Doctor> GetDoctors();
         [OperationContract]
         Doctor GetDoctorById(Guid doctoId);
         [OperationContract]
@@ -84,6 +97,20 @@ namespace HospitalAppointment.Service
 
         [OperationContract]
         IQueryable<Doctor> GetDoctorsBySpecialy(int specialty);
+
+        [OperationContract]
+        void EditDoctor(Doctor entityDoctor);
+
+        [OperationContract]
+        void DeleteDoctorById(Guid doctorId);
+
+        //----Days-----------------------
+        [OperationContract]
+        void EditDays(DaysOfReceiving entityDaysOfReceiving);
+
+        //----Time-----------------------
+        [OperationContract]
+        void EditTime(TimeOfReceiving entityOfReceiving);
 
         //-----
     }

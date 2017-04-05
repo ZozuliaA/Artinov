@@ -52,6 +52,7 @@ namespace HospitalApointmentSystem.Client
             this.tbPassword.Size = new System.Drawing.Size(158, 20);
             this.tbPassword.TabIndex = 1;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
             // 
             // labelLogin
             // 

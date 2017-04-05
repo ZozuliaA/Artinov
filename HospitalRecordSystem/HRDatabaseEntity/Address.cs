@@ -12,6 +12,6 @@ namespace HADatabaseEntity
         [Required]
         public string StreetName { get; set; }
         [Required]
-        public int ApartamentNumber { get; set; } 
+        public int ApartamentNumber { get; set; }
     }
 }

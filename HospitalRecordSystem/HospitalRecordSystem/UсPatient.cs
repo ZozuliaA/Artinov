@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using HADatabaseEntity;
 using HospitalApointmentSystem.Client.ServiceApointment;
@@ -9,6 +10,7 @@ namespace HospitalApointmentSystem.Client
     {
         private readonly Patient _currentUser;
         private Doctor _doctor;
+        private int freeRoom;
          
         public UсPatient(Patient logedPatient)
         {
@@ -18,13 +20,11 @@ namespace HospitalApointmentSystem.Client
 
         private void UсPatient_Load(object sender, EventArgs e)
         {
+            //mcThisMonth.MinDate.
             cbChoseDoctor.Enabled = false;
             mcThisMonth.Enabled = false;
-            rb1000.Enabled = false;
-            rb1020.Enabled = false;
-            rb1040.Enabled = false;
-            rb1100.Enabled = false;
-            rb1200.Enabled = false;
+            RadioButtonsEnabledFalse();
+
             using (var client = new HaServiceClient())
             {
                 foreach (var item in client.GetSpecialties())
@@ -38,23 +38,14 @@ namespace HospitalApointmentSystem.Client
 
         private void cbChoseSpesialty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            rb1000.Refresh();
-            rb1020.Refresh();
-            rb1040.Refresh();
-            rb1100.Refresh();
-            rb1200.Refresh();
+            ResetRadioButtons();
 
             mcThisMonth.Enabled = false;
-            rb1000.Enabled = false;
-            rb1020.Enabled = false;
-            rb1040.Enabled = false;
-            rb1100.Enabled = false;
-            rb1200.Enabled = false;
+            RadioButtonsEnabledFalse();
 
             using (var client = new HaServiceClient())
             {
-                var check =
-                    client.GetDoctorsBySpecialy(client.GetSpecialtyIdByName(cbChoseSpesialty.SelectedItem.ToString()));
+                var check = client.GetDoctorsBySpecialy(client.GetSpecialtyIdByName(cbChoseSpesialty.SelectedItem.ToString()));
                 if (check.Length > 0) 
                 {
                     cbChoseDoctor.DataSource =
@@ -65,27 +56,36 @@ namespace HospitalApointmentSystem.Client
                 else
                 {
                     cbChoseDoctor.Enabled = false;
-                    mcThisMonth.Enabled = false;
-                    rb1000.Enabled = false;
-                    rb1020.Enabled = false;
-                    rb1040.Enabled = false;
-                    rb1100.Enabled = false;
-                    rb1200.Enabled = false;
+                    //mcThisMonth.Enabled = false;
+                    //RadioButtonsEnabledFalse();
                 }
                 cbChoseDoctor.Enabled = true;
-
             }
         }
 
-        private void cbChoseDoctor_SelectedIndexChanged(object sender, EventArgs e)
+        private void RadioButtonsEnabledFalse()
         {
             rb1000.Enabled = false;
             rb1020.Enabled = false;
             rb1040.Enabled = false;
             rb1100.Enabled = false;
             rb1200.Enabled = false;
+        }
 
-            //Doctor d;
+        private void ResetRadioButtons()
+        {
+            rb1000.Checked = false;
+            rb1020.Checked = false;
+            rb1040.Checked = false;
+            rb1100.Checked = false;
+            rb1200.Checked = false;
+        }
+
+        private void cbChoseDoctor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ResetRadioButtons();
+            RadioButtonsEnabledFalse();
+
             using (var client = new HaServiceClient())
             {
                 var item = cbChoseDoctor.SelectedItem as Doctor;
@@ -96,9 +96,11 @@ namespace HospitalApointmentSystem.Client
             mcThisMonth.Enabled = true;
 
             mcThisMonth.RemoveAllBoldedDates();
-            int day = 16;
-            DateTime today = new DateTime(2017, 3, day);
-            DateTime endDate = new DateTime(2017, 3, 31);
+            int day;
+            //DateTime today = new DateTime(2017, 3, day);
+            DateTime today = DateTime.Now;
+            day = int.Parse(today.Day.ToString());
+            DateTime endDate = today.AddMonths(1);
 
             while (today <= endDate)
             {
@@ -126,12 +128,7 @@ namespace HospitalApointmentSystem.Client
                 {
                     mcThisMonth.AddBoldedDate(today);
                 }
-                ++day;
-                if (day == 32)
-                {
-                    break;
-                }
-                today = new DateTime(2017, 3, day);
+                today = today.AddDays(1);
             }
             mcThisMonth.UpdateBoldedDates();
             
@@ -139,6 +136,7 @@ namespace HospitalApointmentSystem.Client
 
         private void mcThisMonth_DateSelected(object sender, DateRangeEventArgs e)
         {
+            ResetRadioButtons();
             //_doctor.DaysOfReceiving.TimeOfReceiving.T10_00;
             rb1000.Enabled = true;
             rb1020.Enabled = true;
@@ -171,46 +169,18 @@ namespace HospitalApointmentSystem.Client
         {
             lvPatientApp.Items.Clear();
 
-            //IQueryable<Appoinment> appoinments;
             using (var client = new HaServiceClient())
             {
                 var appoinments = client.GetAppoinments();
 
                 foreach (var item in appoinments)
                 {
-                    ListViewItem lvItem = new ListViewItem(item.Date.ToShortDateString());//(i.ToString());
-                    //lvItem.SubItems.Add(appoinments[i].RecordNumber.ToString());
-                    //lvItem.SubItems.Add(item.Date.T());
-                    lvItem.SubItems.Add(item.Time);//.ToString());
+                    ListViewItem lvItem = new ListViewItem(item.Date.ToShortDateString());
+                    lvItem.SubItems.Add(item.Time);
                     lvItem.SubItems.Add(item.Doctor.FirstName);
                     lvItem.SubItems.Add(item.Room.RoomNumber.ToString());
-                    //+ appoinments[i].Doctor.LastName);
-
                     lvPatientApp.Items.Add(lvItem);
                 }
-                int countAppointments = appoinments.Length;
-
-                /*for (int i = 0; i < countAppointments; i++)
-                {
-                    ListViewItem lvItem = new ListViewItem();//(i.ToString());
-                    //lvItem.SubItems.Add(appoinments[i].RecordNumber.ToString());
-                    lvItem.SubItems.Add(appoinments[i].Date.ToString());
-                    lvItem.SubItems.Add(appoinments[i].Time);//.ToString());
-                    lvItem.SubItems.Add(appoinments[i].Room.RoomNumber.ToString());
-                    lvItem.SubItems.Add(appoinments[i].Doctor.FirstName);//+ appoinments[i].Doctor.LastName);
-
-                    lvPatientApp.Items.Add(lvItem);
-                }*/
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-            using (var client = new HaServiceClient())
-            {
-                
             }
         }
 
@@ -228,6 +198,38 @@ namespace HospitalApointmentSystem.Client
                 
                 FillListView();
             }
+        }
+
+        private void btAddAppointment_Click(object sender, EventArgs e)
+        {
+            Appoinment appoinment = new Appoinment();
+            appoinment.Date = mcThisMonth.SelectionRange.Start.Date;
+            appoinment.Patient = _currentUser;
+            appoinment.Doctor = _doctor;
+
+
+            using (var client = new HaServiceClient())
+            {
+                var rooms = client.GetRooms();
+                int avRoomNum;
+                int allRoomsCount = rooms.Length;
+                int roomCount=0;
+                //List<string> = 
+                foreach (var item in client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start).Where(t => t.Time.Equals("10:00")))
+                {
+                    foreach (var room in rooms)
+                    {
+                        if (room.RoomNumber == item.Room.RoomNumber)
+                        {
+                            
+                        }
+                    }
+                }
+            }
+
+            
+            //appoinment.Room
+
         }
     }
 }

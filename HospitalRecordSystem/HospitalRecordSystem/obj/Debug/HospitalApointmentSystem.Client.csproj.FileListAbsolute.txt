@@ -40,3 +40,4 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UсPatient.resources
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.UcDoctor.resources
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.EditDoctor.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HospitalRecordSystem\obj\Debug\HospitalApointmentSystem.Client.EditRoom.resources
