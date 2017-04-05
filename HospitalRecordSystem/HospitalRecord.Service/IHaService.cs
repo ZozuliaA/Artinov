@@ -64,10 +64,11 @@ namespace HospitalAppointment.Service
         IQueryable<Room> GetRooms();
 
         [OperationContract]
+        Room GetRoomByNumber(int number);
+        [OperationContract]
         Room GetRoomById(Guid roomId);
         [OperationContract]
         void EditRoom(Room room);
-
         [OperationContract]
         void DeleteRoomById(Guid roomId);
 

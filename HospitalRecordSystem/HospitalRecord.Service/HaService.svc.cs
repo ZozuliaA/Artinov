@@ -79,6 +79,11 @@ namespace HospitalAppointment.Service
             return _roomBusinessLogic.GetAll().Where(un => un.Unavaible.Equals(false));
         }
 
+        public Room GetRoomByNumber(int number)
+        {
+            return _roomBusinessLogic.GetAll().FirstOrDefault(n => n.RoomNumber.Equals(number));
+        }
+
         public Room GetRoomById(Guid roomId)
         {
             return _roomBusinessLogic.GetById(roomId);

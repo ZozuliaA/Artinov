@@ -135,6 +135,12 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetRooms", ReplyAction="http://tempuri.org/IHaService/GetRoomsResponse")]
         System.Threading.Tasks.Task<HADatabaseEntity.Room[]> GetRoomsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetRoomByNumber", ReplyAction="http://tempuri.org/IHaService/GetRoomByNumberResponse")]
+        HADatabaseEntity.Room GetRoomByNumber(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetRoomByNumber", ReplyAction="http://tempuri.org/IHaService/GetRoomByNumberResponse")]
+        System.Threading.Tasks.Task<HADatabaseEntity.Room> GetRoomByNumberAsync(int number);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHaService/GetRoomById", ReplyAction="http://tempuri.org/IHaService/GetRoomByIdResponse")]
         HADatabaseEntity.Room GetRoomById(System.Guid roomId);
         
@@ -417,6 +423,14 @@ namespace HospitalApointmentSystem.Client.ServiceApointment {
         
         public System.Threading.Tasks.Task<HADatabaseEntity.Room[]> GetRoomsAsync() {
             return base.Channel.GetRoomsAsync();
+        }
+        
+        public HADatabaseEntity.Room GetRoomByNumber(int number) {
+            return base.Channel.GetRoomByNumber(number);
+        }
+        
+        public System.Threading.Tasks.Task<HADatabaseEntity.Room> GetRoomByNumberAsync(int number) {
+            return base.Channel.GetRoomByNumberAsync(number);
         }
         
         public HADatabaseEntity.Room GetRoomById(System.Guid roomId) {

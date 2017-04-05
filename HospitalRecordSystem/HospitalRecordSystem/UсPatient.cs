@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using HADatabaseEntity;
@@ -96,10 +97,9 @@ namespace HospitalApointmentSystem.Client
             mcThisMonth.Enabled = true;
 
             mcThisMonth.RemoveAllBoldedDates();
-            int day;
+            //int day;day = int.Parse(today.Day.ToString());
             //DateTime today = new DateTime(2017, 3, day);
             DateTime today = DateTime.Now;
-            day = int.Parse(today.Day.ToString());
             DateTime endDate = today.AddMonths(1);
 
             while (today <= endDate)
@@ -137,16 +137,80 @@ namespace HospitalApointmentSystem.Client
         private void mcThisMonth_DateSelected(object sender, DateRangeEventArgs e)
         {
             ResetRadioButtons();
-            //_doctor.DaysOfReceiving.TimeOfReceiving.T10_00;
-            rb1000.Enabled = true;
-            rb1020.Enabled = true;
-            rb1040.Enabled = true;
-            rb1100.Enabled = true;
-            rb1200.Enabled = true;
+            RadioButtonsEnabledFalse();
             tbSelectedData.Text = mcThisMonth.SelectionRange.Start.ToShortDateString();
+            List<string> times = new List<string>();
+            if (_doctor.DaysOfReceiving.TimeOfReceiving.T10_00 == true) times.Add("10:00");
+            if (_doctor.DaysOfReceiving.TimeOfReceiving.T10_20 == true) times.Add("10:20");
+            if (_doctor.DaysOfReceiving.TimeOfReceiving.T10_40 == true) times.Add("10:40");
+            if (_doctor.DaysOfReceiving.TimeOfReceiving.T11_00 == true) times.Add("11:00");
+            if (_doctor.DaysOfReceiving.TimeOfReceiving.T12_00 == true) times.Add("12:00");
+            
+            List<string> freeTimeForDate = new List<string>();
+            freeTimeForDate = times;
             using (var client = new HaServiceClient())
             {
-                foreach (var item in client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start))
+                var appByDoc = client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start).Where(d => d.Doctor.DoctorId.Equals(_doctor.DoctorId));
+                foreach (var app in appByDoc)
+                {
+                    foreach (var time in times)
+                    {
+                        if (app.Time == time)
+                        {
+                            freeTimeForDate.Remove(time);
+                        }
+                    }
+                }
+                if (freeTimeForDate.Count == 0)
+                {
+                    return;
+                }
+
+                var rooms = client.GetRooms();
+                List<int> roomNum = new List<int>();
+                
+                foreach (var time in freeTimeForDate)
+                {
+                    foreach (var room in rooms)
+                    {
+                        roomNum.Add(room.RoomNumber);
+                    }
+
+                    foreach (var item in client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start).Where(t => t.Time.Equals(time)))
+                    {
+                        foreach (var room in rooms)
+                        {
+                            if (room.RoomNumber == item.Room.RoomNumber)
+                            {
+                                roomNum.Remove(room.RoomNumber);
+                            }
+                        }
+                    }
+
+                    if (roomNum.Count != 0)
+                    {
+                        switch (time)
+                        {
+                            case "10:00":
+                                rb1000.Enabled = true;
+                                break;
+                            case "10:20":
+                                rb1020.Enabled = true;
+                                break;
+                            case "10:40":
+                                rb1040.Enabled = true;
+                                break;
+                            case "11:00":
+                                rb1100.Enabled = true;
+                                break;
+                            case "12:00":
+                                rb1200.Enabled = true;
+                                break;
+                        }
+                    }
+                }
+
+                /*foreach (var item in client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start))
                 {
                     if (item.Time == "10:00") rb1000.Enabled = false;
                     if (item.Time == "10:20") rb1020.Enabled = false;
@@ -155,7 +219,7 @@ namespace HospitalApointmentSystem.Client
                     if (item.Time == "12:00") rb1200.Enabled = false;
                     
                     //cbChoseSpesialty.Items.Add(item.SpecialtyName);
-                }
+                }*/
             }
         }
 
@@ -207,25 +271,52 @@ namespace HospitalApointmentSystem.Client
             appoinment.Patient = _currentUser;
             appoinment.Doctor = _doctor;
 
+            string time = "0";
+
+            if (rb1000.Checked == true) time = "10:00";
+            if (rb1020.Checked == true) time = "10:20";
+            if (rb1040.Checked == true) time = "10:40";
+            if (rb1100.Checked == true) time = "11:00";
+            if (rb1200.Checked == true) time = "12:00";
+
 
             using (var client = new HaServiceClient())
             {
                 var rooms = client.GetRooms();
-                int avRoomNum;
-                int allRoomsCount = rooms.Length;
-                int roomCount=0;
-                //List<string> = 
-                foreach (var item in client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start).Where(t => t.Time.Equals("10:00")))
+                List<int> roomNum = rooms.Select(room => room.RoomNumber).ToList();
+
+                if (time != "0")
                 {
-                    foreach (var room in rooms)
+                    foreach (
+                        var item in
+                            client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start)
+                                .Where(t => t.Time.Equals(time)))
                     {
-                        if (room.RoomNumber == item.Room.RoomNumber)
+                        foreach (var room in rooms)
                         {
-                            
+                            if (room.RoomNumber == item.Room.RoomNumber)
+                            {
+                                roomNum.Remove(room.RoomNumber);
+                            }
                         }
                     }
                 }
+                else return;
+                if (roomNum.Count != 0)
+                {
+                    appoinment.Room = client.GetRoomByNumber(roomNum.First());
+                    appoinment.RecordNumber = 1;
+                    appoinment.Time = time;
+                    client.AddAppointment(appoinment);
+                    FillListView();
+                }
+                else return;
             }
+            
+
+                
+            
+            
 
             
             //appoinment.Room

@@ -127,6 +127,12 @@
   <wsdl:message name="IHaService_GetRooms_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRoomsResponse" />
   </wsdl:message>
+  <wsdl:message name="IHaService_GetRoomByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByNumber" />
+  </wsdl:message>
+  <wsdl:message name="IHaService_GetRoomByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByNumberResponse" />
+  </wsdl:message>
   <wsdl:message name="IHaService_GetRoomById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRoomById" />
   </wsdl:message>
@@ -303,6 +309,10 @@
     <wsdl:operation name="GetRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRooms" message="tns:IHaService_GetRooms_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoomsResponse" message="tns:IHaService_GetRooms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRoomByNumber" message="tns:IHaService_GetRoomByNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHaService/GetRoomByNumberResponse" message="tns:IHaService_GetRoomByNumber_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetRoomById">
       <wsdl:input wsaw:Action="http://tempuri.org/IHaService/GetRoomById" message="tns:IHaService_GetRoomById_InputMessage" />
@@ -544,6 +554,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRooms">
       <soap:operation soapAction="http://tempuri.org/IHaService/GetRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomByNumber">
+      <soap:operation soapAction="http://tempuri.org/IHaService/GetRoomByNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
