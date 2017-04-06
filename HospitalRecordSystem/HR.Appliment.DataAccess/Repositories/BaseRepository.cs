@@ -31,6 +31,8 @@ namespace HospitalAppointment.DataAccess
 
         public void Delete(T entity)
         {
+            
+            Context.Set<T>().Attach(entity);
             Context.Set<T>().Remove(entity);
             Context.SaveChanges();
         }

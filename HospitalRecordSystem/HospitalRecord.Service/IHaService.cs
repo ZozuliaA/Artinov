@@ -31,6 +31,8 @@ namespace HospitalAppointment.Service
 
         [OperationContract]
         void AddAppointment(Appoinment appoinment);
+        [OperationContract]
+        void AddAppointmentOnContext(Guid doctorId, Guid patientId, Guid roomId, Appoinment app);
 
         [OperationContract]
         void DeleteAppointmentById(Guid appoinmentId);
@@ -84,6 +86,16 @@ namespace HospitalAppointment.Service
 
         [OperationContract]
         Specialty GetSpecialtyById(int spesialtyId);
+
+        [OperationContract]
+        void AddSpecialty(Specialty entitySpecialty);
+
+        [OperationContract]
+        void EditSpecialty(Specialty entitySpecialty);
+
+        [OperationContract]
+        void DeleteSpecialty(Specialty specialty);
+
 
         //-----Doctor--------------
         [OperationContract]

@@ -19,6 +19,7 @@ namespace HospitalAppointment.Service
         private readonly RoomBusinessLogic _roomBusinessLogic = new RoomBusinessLogic();
         private readonly SpecialtyBusinessLogic _specialtyBusinessLogic = new SpecialtyBusinessLogic();
         private readonly DorBusinessLogic _dorBusinessLogic = new DorBusinessLogic();
+        private readonly TimeBusinessLogic _timeBusinessLogic = new TimeBusinessLogic();
 
 
         //-----Auth-----------------------------
@@ -120,6 +121,11 @@ namespace HospitalAppointment.Service
             _appointmentBusinessLogic.Insert(appoinment);
         }
 
+        public void AddAppointmentOnContext(Guid doctorId, Guid patientId, Guid roomId, Appoinment app)
+        {
+            _appointmentBusinessLogic.AddAppointmentOnContext(doctorId, patientId, roomId, app);
+        }
+
         public void DeleteAppointmentById(Guid appoinmentId)
         {
             _appointmentBusinessLogic.DeleteById(appoinmentId);
@@ -187,6 +193,21 @@ namespace HospitalAppointment.Service
             return _specialtyBusinessLogic.GetAll().FirstOrDefault(id => id.SpecialtyId.Equals(spesialtyId));
         }
 
+        public void AddSpecialty(Specialty entitySpecialty)
+        {
+            _specialtyBusinessLogic.Insert(entitySpecialty);
+        }
+
+        public void EditSpecialty(Specialty entitySpecialty)
+        {
+            _specialtyBusinessLogic.Update(entitySpecialty);
+        }
+
+        public void DeleteSpecialty(Specialty specialty)
+        {
+            _specialtyBusinessLogic.Delete(specialty);
+        }
+
         //-----Doctor-------------------
         public List<Doctor> GetDoctors()
         {
@@ -232,7 +253,7 @@ namespace HospitalAppointment.Service
         //----Time----------------------------------------------
         public void EditTime(TimeOfReceiving entityOfReceiving)
         {
-
+            _timeBusinessLogic.Update(entityOfReceiving);
         }
 
         //***********************************************************************************************************

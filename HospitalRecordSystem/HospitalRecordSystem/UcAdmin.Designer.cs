@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tcAdmin = new System.Windows.Forms.TabControl();
+            this.tbSpecialty = new System.Windows.Forms.TabPage();
+            this.labelSname = new System.Windows.Forms.Label();
+            this.tbSname = new System.Windows.Forms.TextBox();
+            this.btSpecialtyAdd = new System.Windows.Forms.Button();
             this.tpPatient = new System.Windows.Forms.TabPage();
             this.btpDelete = new System.Windows.Forms.Button();
             this.btpEdit = new System.Windows.Forms.Button();
@@ -112,6 +116,8 @@
             this.labelLastName = new System.Windows.Forms.Label();
             this.tbSecondName = new System.Windows.Forms.TextBox();
             this.tpRoom = new System.Windows.Forms.TabPage();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsslRoom = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelRoomError = new System.Windows.Forms.Label();
             this.btRoomDelete = new System.Windows.Forms.Button();
             this.btRoomEdit = new System.Windows.Forms.Button();
@@ -127,18 +133,26 @@
             this.labelRoomNumber = new System.Windows.Forms.Label();
             this.btAddRoom = new System.Windows.Forms.Button();
             this.tbRoomNumber = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsslRoom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btSpecialtyDelete = new System.Windows.Forms.Button();
+            this.btSpesialtyEdit = new System.Windows.Forms.Button();
+            this.lvSpecialty = new System.Windows.Forms.ListView();
+            this.chSid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chSname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.tsslSpecialty = new System.Windows.Forms.ToolStripStatusLabel();
             this.tcAdmin.SuspendLayout();
+            this.tbSpecialty.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.tpDoctor.SuspendLayout();
             this.tpRoom.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
             // 
+            this.tcAdmin.Controls.Add(this.tbSpecialty);
             this.tcAdmin.Controls.Add(this.tpPatient);
             this.tcAdmin.Controls.Add(this.tpAppointment);
             this.tcAdmin.Controls.Add(this.tpDoctor);
@@ -148,6 +162,49 @@
             this.tcAdmin.SelectedIndex = 0;
             this.tcAdmin.Size = new System.Drawing.Size(556, 452);
             this.tcAdmin.TabIndex = 40;
+            // 
+            // tbSpecialty
+            // 
+            this.tbSpecialty.Controls.Add(this.statusStrip2);
+            this.tbSpecialty.Controls.Add(this.btSpecialtyDelete);
+            this.tbSpecialty.Controls.Add(this.btSpesialtyEdit);
+            this.tbSpecialty.Controls.Add(this.lvSpecialty);
+            this.tbSpecialty.Controls.Add(this.labelSname);
+            this.tbSpecialty.Controls.Add(this.tbSname);
+            this.tbSpecialty.Controls.Add(this.btSpecialtyAdd);
+            this.tbSpecialty.Location = new System.Drawing.Point(4, 22);
+            this.tbSpecialty.Name = "tbSpecialty";
+            this.tbSpecialty.Size = new System.Drawing.Size(548, 426);
+            this.tbSpecialty.TabIndex = 4;
+            this.tbSpecialty.Text = "Specialty";
+            this.tbSpecialty.UseVisualStyleBackColor = true;
+            // 
+            // labelSname
+            // 
+            this.labelSname.AutoSize = true;
+            this.labelSname.Location = new System.Drawing.Point(20, 28);
+            this.labelSname.Name = "labelSname";
+            this.labelSname.Size = new System.Drawing.Size(79, 13);
+            this.labelSname.TabIndex = 2;
+            this.labelSname.Text = "Specialty name";
+            // 
+            // tbSname
+            // 
+            this.tbSname.Location = new System.Drawing.Point(113, 25);
+            this.tbSname.Name = "tbSname";
+            this.tbSname.Size = new System.Drawing.Size(138, 20);
+            this.tbSname.TabIndex = 1;
+            this.tbSname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSname_KeyPress);
+            // 
+            // btSpecialtyAdd
+            // 
+            this.btSpecialtyAdd.Location = new System.Drawing.Point(298, 25);
+            this.btSpecialtyAdd.Name = "btSpecialtyAdd";
+            this.btSpecialtyAdd.Size = new System.Drawing.Size(75, 23);
+            this.btSpecialtyAdd.TabIndex = 0;
+            this.btSpecialtyAdd.Text = "Add";
+            this.btSpecialtyAdd.UseVisualStyleBackColor = true;
+            this.btSpecialtyAdd.Click += new System.EventHandler(this.btSpecialtyAdd_Click);
             // 
             // tpPatient
             // 
@@ -423,9 +480,9 @@
             // 
             // tbpPassSereise
             // 
-            this.tbpPassSereise.Location = new System.Drawing.Point(210, 149);
+            this.tbpPassSereise.Location = new System.Drawing.Point(213, 149);
             this.tbpPassSereise.Name = "tbpPassSereise";
-            this.tbpPassSereise.Size = new System.Drawing.Size(42, 20);
+            this.tbpPassSereise.Size = new System.Drawing.Size(32, 20);
             this.tbpPassSereise.TabIndex = 69;
             // 
             // labelpPassport
@@ -893,6 +950,22 @@
             this.tpRoom.Text = "Room";
             this.tpRoom.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslRoom});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(548, 22);
+            this.statusStrip1.TabIndex = 12;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsslRoom
+            // 
+            this.tsslRoom.Name = "tsslRoom";
+            this.tsslRoom.Size = new System.Drawing.Size(39, 17);
+            this.tsslRoom.Text = "Room";
+            // 
             // labelRoomError
             // 
             this.labelRoomError.AutoSize = true;
@@ -1028,26 +1101,72 @@
             this.tbRoomNumber.TabIndex = 0;
             this.tbRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRoomNumber_KeyPress);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslRoom});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(548, 22);
-            this.statusStrip1.TabIndex = 12;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tsslRoom
+            // btSpecialtyDelete
             // 
-            this.tsslRoom.Name = "tsslRoom";
-            this.tsslRoom.Size = new System.Drawing.Size(39, 17);
-            this.tsslRoom.Text = "Room";
+            this.btSpecialtyDelete.Location = new System.Drawing.Point(402, 235);
+            this.btSpecialtyDelete.Name = "btSpecialtyDelete";
+            this.btSpecialtyDelete.Size = new System.Drawing.Size(80, 36);
+            this.btSpecialtyDelete.TabIndex = 13;
+            this.btSpecialtyDelete.Text = "Delete specialty";
+            this.btSpecialtyDelete.UseVisualStyleBackColor = true;
+            this.btSpecialtyDelete.Click += new System.EventHandler(this.btSpecialtyDelete_Click);
+            // 
+            // btSpesialtyEdit
+            // 
+            this.btSpesialtyEdit.Location = new System.Drawing.Point(402, 76);
+            this.btSpesialtyEdit.Name = "btSpesialtyEdit";
+            this.btSpesialtyEdit.Size = new System.Drawing.Size(80, 36);
+            this.btSpesialtyEdit.TabIndex = 12;
+            this.btSpesialtyEdit.Text = "Edit spesialty";
+            this.btSpesialtyEdit.UseVisualStyleBackColor = true;
+            this.btSpesialtyEdit.Click += new System.EventHandler(this.btSpesialtyEdit_Click);
+            // 
+            // lvSpecialty
+            // 
+            this.lvSpecialty.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chSid,
+            this.chSname});
+            this.lvSpecialty.FullRowSelect = true;
+            this.lvSpecialty.GridLines = true;
+            this.lvSpecialty.Location = new System.Drawing.Point(23, 76);
+            this.lvSpecialty.MultiSelect = false;
+            this.lvSpecialty.Name = "lvSpecialty";
+            this.lvSpecialty.Size = new System.Drawing.Size(356, 195);
+            this.lvSpecialty.TabIndex = 11;
+            this.lvSpecialty.UseCompatibleStateImageBehavior = false;
+            this.lvSpecialty.View = System.Windows.Forms.View.Details;
+            // 
+            // chSid
+            // 
+            this.chSid.Text = "Specialty Id";
+            this.chSid.Width = 78;
+            // 
+            // chSname
+            // 
+            this.chSname.Text = "Name";
+            this.chSname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chSname.Width = 272;
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslSpecialty});
+            this.statusStrip2.Location = new System.Drawing.Point(0, 404);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(548, 22);
+            this.statusStrip2.TabIndex = 14;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // tsslSpecialty
+            // 
+            this.tsslSpecialty.Name = "tsslSpecialty";
+            this.tsslSpecialty.Size = new System.Drawing.Size(54, 17);
+            this.tsslSpecialty.Text = "Specialty";
             // 
             // UcAdmin
             // 
@@ -1058,6 +1177,8 @@
             this.Size = new System.Drawing.Size(597, 458);
             this.Load += new System.EventHandler(this.UcAdmin_Load);
             this.tcAdmin.ResumeLayout(false);
+            this.tbSpecialty.ResumeLayout(false);
+            this.tbSpecialty.PerformLayout();
             this.tpPatient.ResumeLayout(false);
             this.tpPatient.PerformLayout();
             this.tpDoctor.ResumeLayout(false);
@@ -1066,6 +1187,8 @@
             this.tpRoom.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1172,5 +1295,16 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsslRoom;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TabPage tbSpecialty;
+        private System.Windows.Forms.Label labelSname;
+        private System.Windows.Forms.TextBox tbSname;
+        private System.Windows.Forms.Button btSpecialtyAdd;
+        private System.Windows.Forms.Button btSpecialtyDelete;
+        private System.Windows.Forms.Button btSpesialtyEdit;
+        private System.Windows.Forms.ListView lvSpecialty;
+        private System.Windows.Forms.ColumnHeader chSid;
+        private System.Windows.Forms.ColumnHeader chSname;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel tsslSpecialty;
     }
 }

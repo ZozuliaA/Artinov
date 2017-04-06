@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using HADatabaseEntity;
 using HospitalApointmentSystem.Client.ServiceApointment;
@@ -45,25 +46,26 @@ namespace HospitalApointmentSystem.Client
             dor = editDoctor.DaysOfReceiving;
             int timeCount = 0;
             int dayCount = 0;
-            if (clbDay.GetItemCheckState(0) == CheckState.Checked) { dor.Mondey = true; dayCount++;    } else clbDay.SetItemChecked(0, false);
-            if (clbDay.GetItemCheckState(1) == CheckState.Checked) { dor.Tuesday = true; dayCount++;   } else clbDay.SetItemChecked(1, false);
-            if (clbDay.GetItemCheckState(2) == CheckState.Checked) { dor.Wednesday = true; dayCount++; } else clbDay.SetItemChecked(2, false);
-            if (clbDay.GetItemCheckState(3) == CheckState.Checked) { dor.Thursday = true; dayCount++;  } else clbDay.SetItemChecked(3, false);
-            if (clbDay.GetItemCheckState(4) == CheckState.Checked) { dor.Friday = true; dayCount++;    } else clbDay.SetItemChecked(4, false);
-            if (clbDay.GetItemCheckState(5) == CheckState.Checked) { dor.Satarday = true; dayCount++;  } else clbDay.SetItemChecked(5, false);
-            if (clbDay.GetItemCheckState(6) == CheckState.Checked) { dor.Sunday = true; dayCount++;    } else clbDay.SetItemChecked(6, false);
+            if (clbDay.GetItemCheckState(0) == CheckState.Checked) { dor.Mondey = true; dayCount++;    } else dor.Mondey = false;//clbDay.SetItemChecked(0, false);
+            if (clbDay.GetItemCheckState(1) == CheckState.Checked) { dor.Tuesday = true; dayCount++;   } else dor.Tuesday = false;//clbDay.SetItemChecked(1, false);
+            if (clbDay.GetItemCheckState(2) == CheckState.Checked) { dor.Wednesday = true; dayCount++; } else dor.Wednesday = false;//clbDay.SetItemChecked(2, false);
+            if (clbDay.GetItemCheckState(3) == CheckState.Checked) { dor.Thursday = true; dayCount++;  } else dor.Thursday = false;//clbDay.SetItemChecked(3, false);
+            if (clbDay.GetItemCheckState(4) == CheckState.Checked) { dor.Friday = true; dayCount++;    } else dor.Friday = false;//clbDay.SetItemChecked(4, false);
+            if (clbDay.GetItemCheckState(5) == CheckState.Checked) { dor.Satarday = true; dayCount++;  } else dor.Satarday = false;//clbDay.SetItemChecked(5, false);
+            if (clbDay.GetItemCheckState(6) == CheckState.Checked) { dor.Sunday = true; dayCount++;    } else dor.Sunday = false;//clbDay.SetItemChecked(6, false);
 
             time = editDoctor.DaysOfReceiving.TimeOfReceiving;
-            if (clbTime.GetItemCheckState(0) == CheckState.Checked) { time.T10_00 = true; timeCount++; } else clbTime.SetItemChecked(0, false);
-            if (clbTime.GetItemCheckState(1) == CheckState.Checked) { time.T10_20 = true; timeCount++; } else clbTime.SetItemChecked(1, false);
-            if (clbTime.GetItemCheckState(2) == CheckState.Checked) { time.T10_40 = true; timeCount++; } else clbTime.SetItemChecked(2, false);
-            if (clbTime.GetItemCheckState(3) == CheckState.Checked) { time.T11_00 = true; timeCount++; } else clbTime.SetItemChecked(3, false);
-            if (clbTime.GetItemCheckState(4) == CheckState.Checked) { time.T12_00 = true; timeCount++; } else clbTime.SetItemChecked(4, false);
+            if (clbTime.GetItemCheckState(0) == CheckState.Checked) { time.T10_00 = true; timeCount++; } else time.T10_00 = false;//clbTime.SetItemChecked(0, false);
+            if (clbTime.GetItemCheckState(1) == CheckState.Checked) { time.T10_20 = true; timeCount++; } else time.T10_20 = false;//clbTime.SetItemChecked(1, false);
+            if (clbTime.GetItemCheckState(2) == CheckState.Checked) { time.T10_40 = true; timeCount++; } else time.T10_40 = false;//clbTime.SetItemChecked(2, false);
+            if (clbTime.GetItemCheckState(3) == CheckState.Checked) { time.T11_00 = true; timeCount++; } else time.T11_00 = false;//clbTime.SetItemChecked(3, false);
+            if (clbTime.GetItemCheckState(4) == CheckState.Checked) { time.T12_00 = true; timeCount++; } else time.T12_00 = false;//clbTime.SetItemChecked(4, false);
 
             if (editDoctor.FirstName.Length <= 3 || editDoctor.FirstName.Length > 30 || editDoctor.LastName.Length <= 3 || editDoctor.LastName.Length > 30 
                 || editDoctor.SecondName.Length <= 3 || editDoctor.SecondName.Length > 30 || timeCount == 0 || dayCount == 0)
             {
-                MessageBox.Show("Invalid Data");
+                tsslEditDoc.ForeColor = Color.Crimson;
+                tsslEditDoc.Text = "Invalid Data";
             }
             else
             {
@@ -72,6 +74,7 @@ namespace HospitalApointmentSystem.Client
                     client.EditDoctor(editDoctor);
                     client.EditDays(dor);
                     client.EditTime(time);
+                    DialogResult = DialogResult.OK;
                 }
                 
             }

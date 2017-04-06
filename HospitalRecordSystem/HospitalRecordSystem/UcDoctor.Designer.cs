@@ -41,6 +41,8 @@
             this.labelWorkTime = new System.Windows.Forms.Label();
             this.labelTimeDoc = new System.Windows.Forms.Label();
             this.btEditDoc = new System.Windows.Forms.Button();
+            this.chRoom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // labelHD
@@ -81,7 +83,9 @@
             this.chName,
             this.chLastName,
             this.chSecName,
-            this.chHisBNum});
+            this.chHisBNum,
+            this.chRoom,
+            this.chTime});
             this.lvDoc.GridLines = true;
             this.lvDoc.Location = new System.Drawing.Point(30, 205);
             this.lvDoc.Name = "lvDoc";
@@ -102,13 +106,13 @@
             // 
             // chSecName
             // 
-            this.chSecName.Text = "SecName";
-            this.chSecName.Width = 139;
+            this.chSecName.Text = "PoB";
+            this.chSecName.Width = 64;
             // 
             // chHisBNum
             // 
             this.chHisBNum.Text = "Historybook Number";
-            this.chHisBNum.Width = 125;
+            this.chHisBNum.Width = 111;
             // 
             // labelTableName
             // 
@@ -163,6 +167,14 @@
             this.btEditDoc.UseVisualStyleBackColor = true;
             this.btEditDoc.Click += new System.EventHandler(this.btEditDoc_Click);
             // 
+            // chRoom
+            // 
+            this.chRoom.Text = "Room";
+            // 
+            // chTime
+            // 
+            this.chTime.Text = "Time";
+            // 
             // UcDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,5 +211,7 @@
         private System.Windows.Forms.Label labelWorkTime;
         private System.Windows.Forms.Label labelTimeDoc;
         private System.Windows.Forms.Button btEditDoc;
+        private System.Windows.Forms.ColumnHeader chRoom;
+        private System.Windows.Forms.ColumnHeader chTime;
     }
 }

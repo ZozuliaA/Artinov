@@ -6,10 +6,10 @@ using HospitalAppointment.DataAccess;
 
 namespace HospitalAppointment.Logic
 {
-    public class BusinessLogic<TEntity , TRepository> where TEntity : class
-                                                      where TRepository : BaseRepository<TEntity>, new()
+    public class BusinessLogic<TEntity, TRepository> where TEntity : class
+        where TRepository : BaseRepository<TEntity>, new()
     {
-        protected readonly TRepository Repository; 
+        protected readonly TRepository Repository;
 
         public BusinessLogic()
         {
@@ -34,6 +34,11 @@ namespace HospitalAppointment.Logic
         public void DeleteById(Guid entityId)
         {
             Repository.DeleteById(entityId);
+        }
+
+        public void Delete(TEntity entity)
+        {
+            Repository.Delete(entity);
         }
 
         public void Update(TEntity entity)

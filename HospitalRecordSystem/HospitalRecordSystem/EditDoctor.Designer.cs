@@ -42,6 +42,9 @@
             this.labelNewDays = new System.Windows.Forms.Label();
             this.labelChangeTime = new System.Windows.Forms.Label();
             this.btEditDocChangePas = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsslEditDoc = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelEditDocName
@@ -137,7 +140,7 @@
             // 
             // btSaveChanges
             // 
-            this.btSaveChanges.Location = new System.Drawing.Point(114, 300);
+            this.btSaveChanges.Location = new System.Drawing.Point(114, 286);
             this.btSaveChanges.Name = "btSaveChanges";
             this.btSaveChanges.Size = new System.Drawing.Size(77, 23);
             this.btSaveChanges.TabIndex = 39;
@@ -148,7 +151,7 @@
             // btCancel
             // 
             this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btCancel.Location = new System.Drawing.Point(197, 300);
+            this.btCancel.Location = new System.Drawing.Point(197, 286);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(82, 23);
             this.btCancel.TabIndex = 40;
@@ -183,12 +186,28 @@
             this.btEditDocChangePas.UseVisualStyleBackColor = true;
             this.btEditDocChangePas.Click += new System.EventHandler(this.btEditDocChangePas_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslEditDoc});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 311);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(284, 22);
+            this.statusStrip1.TabIndex = 44;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsslEditDoc
+            // 
+            this.tsslEditDoc.Name = "tsslEditDoc";
+            this.tsslEditDoc.Size = new System.Drawing.Size(0, 17);
+            // 
             // EditDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancel;
             this.ClientSize = new System.Drawing.Size(284, 333);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btEditDocChangePas);
             this.Controls.Add(this.labelChangeTime);
             this.Controls.Add(this.labelNewDays);
@@ -206,6 +225,8 @@
             this.Name = "EditDoctor";
             this.Text = "EditDoctor";
             this.Load += new System.EventHandler(this.EditDoctor_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +248,7 @@
         private System.Windows.Forms.Label labelNewDays;
         private System.Windows.Forms.Label labelChangeTime;
         private System.Windows.Forms.Button btEditDocChangePas;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslEditDoc;
     }
 }

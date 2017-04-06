@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HADatabaseEntity;
+using HospitalApointmentSystem.Client.ServiceApointment;
 
 namespace HospitalApointmentSystem.Client
 {
     public partial class UcDoctor : UserControl
     {
-        private readonly Doctor _doctor;
+        private Doctor _doctor;
         public UcDoctor(Doctor logedDoctor)
         {
             InitializeComponent();
@@ -22,6 +23,17 @@ namespace HospitalApointmentSystem.Client
 
         private void UcDoctor_Load(object sender, EventArgs e)
         {
+            RefreshUcDoc();
+        }
+
+        public void RefreshUcDoc()
+        {
+            FillDoctorListView();
+            //Doctor doc = new Doctor();
+            using (var client = new HaServiceClient())
+            {
+                _doctor = client.GetDoctorById(_doctor.DoctorId);
+            }
             labelDocName.Text = _doctor.FirstName;
             labelWorkDays.Text = "";
 
@@ -44,7 +56,35 @@ namespace HospitalApointmentSystem.Client
         private void btEditDoc_Click(object sender, EventArgs e)
         {
             EditDoctor editDoctor = new EditDoctor(_doctor);
-            editDoctor.Show();
+            if (editDoctor.ShowDialog() == DialogResult.OK)
+            {
+                RefreshUcDoc();
+            }
+        }
+
+        private void FillDoctorListView()
+        {
+            lvDoc.Items.Clear();
+
+            using (var client = new HaServiceClient())
+            {
+                var appoinments = client.GetAppoinmentsByDate(DateTime.Today).Where(id => id.Doctor.DoctorId.Equals(_doctor.DoctorId));
+                if (appoinments.Count() <  1)
+                {
+                    return;
+                }
+                foreach (var item in appoinments)
+                {
+                    ListViewItem lvItem = new ListViewItem(item.Patient.FirstName);
+                    lvItem.SubItems.Add(item.Patient.SecondName);
+                    lvItem.SubItems.Add(item.Patient.LastName);
+                    lvItem.SubItems.Add(item.Patient.HistoryBook.BookNumber.ToString());
+                    //lvItem.SubItems.Add(item.Patient.HistoryBook.BookNumber.ToString());
+                    lvItem.SubItems.Add(item.Room.RoomNumber.ToString());
+                    lvItem.SubItems.Add(item.Time);
+                    lvDoc.Items.Add(lvItem);
+                }
+            }
         }
     }
 }

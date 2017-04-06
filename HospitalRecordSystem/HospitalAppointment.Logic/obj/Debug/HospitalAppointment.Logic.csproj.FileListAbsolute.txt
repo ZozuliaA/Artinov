@@ -26,3 +26,17 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\Hospit
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalAppointment.Logic\obj\Debug\HospitalAppointment.Logic.csprojResolveAssemblyReference.cache
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalAppointment.Logic\obj\Debug\HospitalAppointment.Logic.dll
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HospitalAppointment.Logic\obj\Debug\HospitalAppointment.Logic.pdb
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HospitalAppointment.Logic.dll.config
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HospitalAppointment.Logic.dll
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HospitalAppointment.Logic.pdb
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\EntityFramework.dll
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\EntityFramework.SqlServer.dll
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HADatabaseEntity.dll
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HospitalAppointment.DataAccess.dll
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HospitalAppointment.DataAccess.pdb
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\HADatabaseEntity.pdb
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\EntityFramework.xml
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\bin\Debug\EntityFramework.SqlServer.xml
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\obj\Debug\HospitalAppointment.Logic.csprojResolveAssemblyReference.cache
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\obj\Debug\HospitalAppointment.Logic.dll
+D:\VsProjects\HospitalRecordSystem\HospitalAppointment.Logic\obj\Debug\HospitalAppointment.Logic.pdb

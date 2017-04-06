@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using HADatabaseEntity;
 using HospitalApointmentSystem.Client.ServiceApointment;
@@ -8,6 +9,7 @@ namespace HospitalApointmentSystem.Client
     public partial class UcAdmin : UserControl
     {
         private readonly Patient _currentUser;
+
         public UcAdmin(Patient logedPatient)
         {
             InitializeComponent();
@@ -18,13 +20,33 @@ namespace HospitalApointmentSystem.Client
         {
             RefreshForm();
         }
+
         public void RefreshForm()
         {
+            FillSpecialtyListView();
             FillRoomElements();
             FillCbChoseSpesialty();
             FillRoomListView();
             FillPatientListView();
             FillDoctorListView();
+        }
+
+        private void FillSpecialtyListView()
+        {
+            lvSpecialty.Items.Clear();
+
+            using (var client = new HaServiceClient())
+            {
+                var specialty = client.GetSpecialties();
+
+                foreach (var item in specialty)
+                {
+                    //var spesialty = client.GetSpecialtyById(item.SpecialtyId);
+                    ListViewItem lvItem = new ListViewItem(item.SpecialtyId.ToString());
+                    lvItem.SubItems.Add(item.SpecialtyName);
+                    lvSpecialty.Items.Add(lvItem);
+                }
+            }
         }
 
         private void FillDoctorListView()
@@ -34,14 +56,14 @@ namespace HospitalApointmentSystem.Client
             using (var client = new HaServiceClient())
             {
                 Doctor[] doors = client.GetDoctors();
-                
+
 
                 foreach (var item in doors)
                 {
                     var spesialty = client.GetSpecialtyById(item.Specialty.SpecialtyId);
                     ListViewItem lvItem = new ListViewItem(spesialty.SpecialtyName);
-                    lvItem.SubItems.Add(item.LastName);//.ToString());
-                    lvItem.SubItems.Add(item.FirstName);//.ToString());
+                    lvItem.SubItems.Add(item.LastName); //.ToString());
+                    lvItem.SubItems.Add(item.FirstName); //.ToString());
                     lvItem.SubItems.Add(item.SecondName);
                     lvItem.SubItems.Add(item.LoginD);
                     lvItem.SubItems.Add(item.DoctorId.ToString());
@@ -57,11 +79,11 @@ namespace HospitalApointmentSystem.Client
             using (var client = new HaServiceClient())
             {
                 var patients = client.GetAllPatients();
-                
+
                 foreach (var item in patients)
                 {
                     ListViewItem lvItem = new ListViewItem(item.FirstName);
-                    lvItem.SubItems.Add(item.LastName);//.ToString());
+                    lvItem.SubItems.Add(item.LastName); //.ToString());
                     lvItem.SubItems.Add(item.SecondName);
                     lvItem.SubItems.Add(item.Email);
                     lvItem.SubItems.Add(item.Login);
@@ -86,6 +108,7 @@ namespace HospitalApointmentSystem.Client
 
         private void FillCbChoseSpesialty()
         {
+            cbChoseSpesialty.Items.Clear();
             using (var client = new HaServiceClient())
             {
                 foreach (var item in client.GetSpecialties())
@@ -103,9 +126,9 @@ namespace HospitalApointmentSystem.Client
             doc.SecondName = tbSecondName.Text;
             doc.LoginD = tbDocLogin.Text;
             doc.Role = "Doctor";
-            
 
-            DaysOfReceiving dor= new DaysOfReceiving();
+
+            DaysOfReceiving dor = new DaysOfReceiving();
             if (clbDay.GetItemCheckState(0) == CheckState.Checked) dor.Mondey = true;
             if (clbDay.GetItemCheckState(1) == CheckState.Checked) dor.Tuesday = true;
             if (clbDay.GetItemCheckState(2) == CheckState.Checked) dor.Wednesday = true;
@@ -128,16 +151,17 @@ namespace HospitalApointmentSystem.Client
             {
                 //doc.Specialty = client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString());//. SelectedText);
                 doc.HashD = client.CreateHashOnServer(tbDocPassword.Text);
-                client.AddDoctorOnContext(doc, client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString()).SpecialtyId);
+                client.AddDoctorOnContext(doc,
+                    client.GetSpecialtyByName(cbChoseSpesialty.SelectedItem.ToString()).SpecialtyId);
             }
             FillDoctorListView();
         }
-        
-        
+
+
         private void FillRoomListView()
         {
             lvRooms.Items.Clear();
-            
+
             using (var client = new HaServiceClient())
             {
                 var rooms = client.GetRooms();
@@ -145,12 +169,12 @@ namespace HospitalApointmentSystem.Client
                 foreach (var item in rooms)
                 {
                     ListViewItem lvItem = new ListViewItem(item.RoomNumber.ToString());
-                    lvItem.SubItems.Add(item.Type);//.ToString());
+                    lvItem.SubItems.Add(item.Type); //.ToString());
                     lvItem.SubItems.Add(item.Unavaible.ToString());
                     lvItem.SubItems.Add(item.RoomId.ToString());
                     lvRooms.Items.Add(lvItem);
                 }
-             }
+            }
         }
 
         private void btAddRoom_Click(object sender, EventArgs e)
@@ -159,7 +183,8 @@ namespace HospitalApointmentSystem.Client
             room.RoomNumber = int.Parse(tbRoomNumber.Text);
             room.Type = tbRoomType.Text;
 
-            if (rbYes.Checked == true) room.Unavaible = true; else room.Unavaible = false;
+            if (rbYes.Checked == true) room.Unavaible = true;
+            else room.Unavaible = false;
             using (var client = new HaServiceClient())
             {
                 client.InsertRoom(room);
@@ -181,6 +206,28 @@ namespace HospitalApointmentSystem.Client
                     FillRoomListView();
                 }
             }
+        }
+
+        private void CrealPatentTbFields()
+        {
+            tbpName.Text = "";
+            tbpPoB.Text = "";
+            tbpSurName.Text = "";
+            tbpEmail.Text = "";
+            tbpLogin.Text = "";
+            tbpHomePhone.Text = "";
+            tbpMobilePhone.Text = "";
+            tbpWorkPhone.Text = "";
+            tbpBday.Text = "";
+            tbpBmonth.Text = "";
+            tbpByear.Text = "";
+            tbpDayIoP.Text = "";
+            tbpPassSereise.Text = "";
+            tbpSereiseNumber.Text = "";
+            tbpYearIoP.Text = "";
+            tbpAn.Text = "";
+            tbpStreet.Text = "";
+            tbpHisBookNum.Text = "";
         }
 
         private void btpAddPatient_Click(object sender, EventArgs e)
@@ -227,6 +274,7 @@ namespace HospitalApointmentSystem.Client
             {
                 patient.Hash = client.CreateHashOnServer("111111");
                 client.AddPatient(patient);
+                CrealPatentTbFields();
             }
 
             FillPatientListView();
@@ -314,6 +362,88 @@ namespace HospitalApointmentSystem.Client
             {
                 e.Handled = true;
             }
+        }
+
+        private void tbSname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))//)&& (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btSpecialtyAdd_Click(object sender, EventArgs e)
+        {
+            if (tbSname.Text.Trim().Length == 0)
+            {
+                tsslSpecialty.ForeColor = Color.Crimson;
+                tsslSpecialty.Text = "Invalid data";
+                return;
+            }
+            using (var client = new HaServiceClient())
+            {
+                Specialty specialty = new Specialty();
+                var allsp = client.GetSpecialties();
+                foreach (var item in allsp)
+                {
+                    if (item.SpecialtyName == tbSname.Text.Trim())
+                    {
+                        tsslSpecialty.ForeColor = Color.Crimson;
+                        tsslSpecialty.Text = "Specialty alredy exist";
+                        return;
+                    }
+                }
+
+                specialty.SpecialtyName = tbSname.Text.Trim();
+                client.AddSpecialty(specialty);
+
+                FillSpecialtyListView();
+                FillCbChoseSpesialty();
+                tsslSpecialty.ForeColor = Color.DarkGreen;
+                tsslSpecialty.Text = "Specialty added";
+                tbSname.Text = "";
+            }
+        }
+
+        private void btSpecialtyDelete_Click(object sender, EventArgs e)
+        {
+            int selectedDoctorssCount = lvSpecialty.SelectedItems.Count;
+            if (selectedDoctorssCount != 0)
+            {
+                ListViewItem selectedSpecialty = lvSpecialty.SelectedItems[0];
+                int selectedId = int.Parse(selectedSpecialty.SubItems[0].Text);
+                var confirmResult = MessageBox.Show("Are you sure to delete this Specialty?\nSpecialty :  " + selectedSpecialty.SubItems[1].Text, "Confirm delete!", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    using (var client = new HaServiceClient())
+                    {
+                        Specialty specialty = client.GetSpecialtyById(selectedId);
+                        var getAllDocBySpecialty = client.GetDoctorsBySpecialy(selectedId);
+                        if (getAllDocBySpecialty.Length != 0)
+                        {
+                            tsslSpecialty.ForeColor = Color.Crimson;
+                            tsslSpecialty.Text = "Unable to delete, doctors with this sp exist";
+                            return;
+                        }
+                        client.DeleteSpecialty(specialty);
+                        FillSpecialtyListView();
+                        FillCbChoseSpesialty();
+                        tsslSpecialty.ForeColor = Color.Green;
+                        tsslSpecialty.Text = "Specialty sucssesfuly deleted";
+                    }
+                    
+                }
+                else
+                {
+                    //DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+        }
+
+        private void btSpesialtyEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

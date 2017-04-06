@@ -22,6 +22,11 @@ namespace HospitalApointmentSystem.Client
         private void UсPatient_Load(object sender, EventArgs e)
         {
             //mcThisMonth.MinDate.
+            RefreshPatientForm();
+        }
+
+        private void RefreshPatientForm()
+        {
             cbChoseDoctor.Enabled = false;
             mcThisMonth.Enabled = false;
             RadioButtonsEnabledFalse();
@@ -114,6 +119,10 @@ namespace HospitalApointmentSystem.Client
                 {
                     mcThisMonth.AddBoldedDate(today);
                 }
+                if (today.DayOfWeek == DayOfWeek.Thursday && _doctor.DaysOfReceiving.Thursday == true)
+                {
+                    mcThisMonth.AddBoldedDate(today);
+                }
                 if (today.DayOfWeek == DayOfWeek.Friday && _doctor.DaysOfReceiving.Friday == true)
                 {
                     mcThisMonth.AddBoldedDate(today);
@@ -143,9 +152,20 @@ namespace HospitalApointmentSystem.Client
             if (_doctor.DaysOfReceiving.TimeOfReceiving.T10_40 == true) times.Add("10:40");
             if (_doctor.DaysOfReceiving.TimeOfReceiving.T11_00 == true) times.Add("11:00");
             if (_doctor.DaysOfReceiving.TimeOfReceiving.T12_00 == true) times.Add("12:00");
-            
+
             List<string> freeTimeForDate = new List<string>();
             freeTimeForDate = times;
+
+            List<string> myAppTimeForToday = new List<string>();
+            using (var client = new HaServiceClient())
+            {
+                foreach (var item in client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start.Date).Where(pId => pId.Patient.PatientId.Equals(_currentUser.PatientId)))
+                {
+                    freeTimeForDate.Remove(item.Time);
+                }
+            }
+
+            
             using (var client = new HaServiceClient())
             {
                 var appByDoc = client.GetAppoinmentsByDate(mcThisMonth.SelectionRange.Start).Where(d => d.Doctor.DoctorId.Equals(_doctor.DoctorId));
@@ -241,6 +261,7 @@ namespace HospitalApointmentSystem.Client
                     lvItem.SubItems.Add(item.Time);
                     lvItem.SubItems.Add(item.Doctor.FirstName);
                     lvItem.SubItems.Add(item.Room.RoomNumber.ToString());
+                    lvItem.SubItems.Add(item.AppointmentId.ToString());
                     lvPatientApp.Items.Add(lvItem);
                 }
             }
@@ -252,7 +273,7 @@ namespace HospitalApointmentSystem.Client
             if (selectedAnimal != 0)
             {
                 ListViewItem selectedItem = lvPatientApp.SelectedItems[0];
-                Guid selectedId = Guid.Parse(selectedItem.SubItems[3].Text);
+                Guid selectedId = Guid.Parse(selectedItem.SubItems[4].Text);
                 using (var client = new HaServiceClient())
                 {
                     client.DeleteAppointmentById(selectedId);
@@ -265,7 +286,7 @@ namespace HospitalApointmentSystem.Client
         private void btAddAppointment_Click(object sender, EventArgs e)
         {
             Appoinment appoinment = new Appoinment();
-            appoinment.Date = DateTime.Now;
+            appoinment.Date = mcThisMonth.SelectionRange.Start.Date; //DateTime.Now;
             //new DateTime(2017, 4, 5);//mcThisMonth.SelectionRange.Start.Date;
             appoinment.Patient = _currentUser;
             appoinment.Doctor = _doctor;
@@ -304,10 +325,13 @@ namespace HospitalApointmentSystem.Client
                 if (roomNum.Count != 0)
                 {
                     appoinment.Room = client.GetRoomByNumber(roomNum.First());
+                    var room = client.GetRoomByNumber(roomNum.First());
+
                     appoinment.RecordNumber = 1;
                     appoinment.Time = time;
-                    client.AddAppointment(appoinment);
-                    FillListView();
+                    //client.AddAppointment(appoinment);
+                    client.AddAppointmentOnContext(_doctor.DoctorId, _currentUser.PatientId, room.RoomId, appoinment);
+                    Refresh();
                 }
                 else return;
             }
