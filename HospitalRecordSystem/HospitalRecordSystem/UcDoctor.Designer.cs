@@ -83,9 +83,9 @@
             this.chSecName,
             this.chHisBNum});
             this.lvDoc.GridLines = true;
-            this.lvDoc.Location = new System.Drawing.Point(30, 291);
+            this.lvDoc.Location = new System.Drawing.Point(30, 205);
             this.lvDoc.Name = "lvDoc";
-            this.lvDoc.Size = new System.Drawing.Size(486, 114);
+            this.lvDoc.Size = new System.Drawing.Size(525, 200);
             this.lvDoc.TabIndex = 3;
             this.lvDoc.UseCompatibleStateImageBehavior = false;
             this.lvDoc.View = System.Windows.Forms.View.Details;
@@ -115,7 +115,7 @@
             this.labelTableName.AutoSize = true;
             this.labelTableName.Font = new System.Drawing.Font("Monotype Corsiva", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTableName.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.labelTableName.Location = new System.Drawing.Point(29, 266);
+            this.labelTableName.Location = new System.Drawing.Point(26, 180);
             this.labelTableName.Name = "labelTableName";
             this.labelTableName.Size = new System.Drawing.Size(158, 22);
             this.labelTableName.TabIndex = 4;
@@ -155,7 +155,7 @@
             // 
             // btEditDoc
             // 
-            this.btEditDoc.Location = new System.Drawing.Point(520, 51);
+            this.btEditDoc.Location = new System.Drawing.Point(467, 48);
             this.btEditDoc.Name = "btEditDoc";
             this.btEditDoc.Size = new System.Drawing.Size(75, 23);
             this.btEditDoc.TabIndex = 8;
@@ -177,7 +177,7 @@
             this.Controls.Add(this.labelDocName);
             this.Controls.Add(this.labelHD);
             this.Name = "UcDoctor";
-            this.Size = new System.Drawing.Size(642, 428);
+            this.Size = new System.Drawing.Size(589, 428);
             this.Load += new System.EventHandler(this.UcDoctor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

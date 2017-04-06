@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpPatient = new System.Windows.Forms.TabPage();
             this.btpDelete = new System.Windows.Forms.Button();
@@ -126,10 +127,14 @@
             this.labelRoomNumber = new System.Windows.Forms.Label();
             this.btAddRoom = new System.Windows.Forms.Button();
             this.tbRoomNumber = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsslRoom = new System.Windows.Forms.ToolStripStatusLabel();
             this.tcAdmin.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.tpDoctor.SuspendLayout();
             this.tpRoom.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -868,6 +873,7 @@
             // 
             // tpRoom
             // 
+            this.tpRoom.Controls.Add(this.statusStrip1);
             this.tpRoom.Controls.Add(this.labelRoomError);
             this.tpRoom.Controls.Add(this.btRoomDelete);
             this.tpRoom.Controls.Add(this.btRoomEdit);
@@ -1020,6 +1026,28 @@
             this.tbRoomNumber.Name = "tbRoomNumber";
             this.tbRoomNumber.Size = new System.Drawing.Size(100, 20);
             this.tbRoomNumber.TabIndex = 0;
+            this.tbRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRoomNumber_KeyPress);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslRoom});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(548, 22);
+            this.statusStrip1.TabIndex = 12;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // tsslRoom
+            // 
+            this.tsslRoom.Name = "tsslRoom";
+            this.tsslRoom.Size = new System.Drawing.Size(39, 17);
+            this.tsslRoom.Text = "Room";
             // 
             // UcAdmin
             // 
@@ -1036,6 +1064,8 @@
             this.tpDoctor.PerformLayout();
             this.tpRoom.ResumeLayout(false);
             this.tpRoom.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1139,5 +1169,8 @@
         private System.Windows.Forms.ColumnHeader chpAdrress;
         private System.Windows.Forms.Button btpDelete;
         private System.Windows.Forms.Button btpEdit;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslRoom;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

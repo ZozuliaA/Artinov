@@ -44,3 +44,5 @@ E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Deb
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ReturnDoctorRequiredSpecialty.resources
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.DocTableAddRoleLoginHash.resources
 E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.NothingAdd.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.RemoveFromHaContext.resources
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HR.Appliment.DataAccess\obj\Debug\HospitalAppointment.DataAccess.Migrations.ReturnFromHaContext.resources

@@ -13,21 +13,20 @@ namespace HospitalAppointment.DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Doctor>().HasRequired(x => x.Specialty);
+            
             modelBuilder.Entity<Doctor>().HasRequired(x => x.DaysOfReceiving);
             modelBuilder.Entity<Doctor>().HasRequired(x => x.Specialty);
-
-
-            //modelBuilder.Entity<Specialty>().HasOptional(x => x.Doctors);
-            //modelBuilder.Entity<Specialty>().HasMany(x => x.Doctors);
-
-
-
+            
             modelBuilder.Entity<DaysOfReceiving>().HasRequired(t => t.TimeOfReceiving);
 
             modelBuilder.Entity<Appoinment>().HasRequired(doc => doc.Doctor);
             modelBuilder.Entity<Appoinment>().HasRequired(p => p.Patient);
             modelBuilder.Entity<Appoinment>().HasRequired(r => r.Room);
+
+
+            //modelBuilder.Entity<Specialty>().HasOptional(x => x.Doctors);
+            //modelBuilder.Entity<Specialty>().HasMany(x => x.Doctors);
+
         }
 
         public DbSet<Address> Addresses { get; set; }

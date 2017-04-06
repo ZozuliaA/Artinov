@@ -164,6 +164,7 @@ namespace HospitalApointmentSystem.Client
             {
                 client.InsertRoom(room);
             }
+            tsslRoom.Text = "Room added";
             RefreshForm();
         }
 
@@ -245,8 +246,8 @@ namespace HospitalApointmentSystem.Client
                     {
                         client.DeleteRoomById(selectedId);
                     }
+                    tsslRoom.Text = "Room deleted";
                     FillRoomListView();
-
                 }
                 else
                 {
@@ -307,5 +308,12 @@ namespace HospitalApointmentSystem.Client
             }
         }
 
+        private void tbRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//)&& (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

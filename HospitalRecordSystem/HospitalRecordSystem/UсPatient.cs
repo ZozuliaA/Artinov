@@ -97,8 +97,6 @@ namespace HospitalApointmentSystem.Client
             mcThisMonth.Enabled = true;
 
             mcThisMonth.RemoveAllBoldedDates();
-            //int day;day = int.Parse(today.Day.ToString());
-            //DateTime today = new DateTime(2017, 3, day);
             DateTime today = DateTime.Now;
             DateTime endDate = today.AddMonths(1);
 
@@ -267,7 +265,8 @@ namespace HospitalApointmentSystem.Client
         private void btAddAppointment_Click(object sender, EventArgs e)
         {
             Appoinment appoinment = new Appoinment();
-            appoinment.Date = mcThisMonth.SelectionRange.Start.Date;
+            appoinment.Date = DateTime.Now;
+            //new DateTime(2017, 4, 5);//mcThisMonth.SelectionRange.Start.Date;
             appoinment.Patient = _currentUser;
             appoinment.Doctor = _doctor;
 

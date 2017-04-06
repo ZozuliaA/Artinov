@@ -78,6 +78,14 @@
     <Compile Include="Migrations\201703281504276_NothingAdd.Designer.cs">
       <DependentUpon>201703281504276_NothingAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704051607215_RemoveFromHaContext.cs" />
+    <Compile Include="Migrations\201704051607215_RemoveFromHaContext.Designer.cs">
+      <DependentUpon>201704051607215_RemoveFromHaContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704051609344_ReturnFromHaContext.cs" />
+    <Compile Include="Migrations\201704051609344_ReturnFromHaContext.Designer.cs">
+      <DependentUpon>201704051609344_ReturnFromHaContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\AppointmentRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\DoctorRepository.cs" />
@@ -145,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703281504276_NothingAdd.resx">
       <DependentUpon>201703281504276_NothingAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051607215_RemoveFromHaContext.resx">
+      <DependentUpon>201704051607215_RemoveFromHaContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051609344_ReturnFromHaContext.resx">
+      <DependentUpon>201704051609344_ReturnFromHaContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

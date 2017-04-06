@@ -37,16 +37,11 @@
             this.labelInfo = new System.Windows.Forms.Label();
             this.clbTime = new System.Windows.Forms.CheckedListBox();
             this.clbDay = new System.Windows.Forms.CheckedListBox();
-            this.tbEditDocPassword = new System.Windows.Forms.TextBox();
-            this.tbEditDocPasswordChek = new System.Windows.Forms.TextBox();
-            this.tbEditDocCurrentPassword = new System.Windows.Forms.TextBox();
             this.btSaveChanges = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.labelNewDays = new System.Windows.Forms.Label();
             this.labelChangeTime = new System.Windows.Forms.Label();
-            this.labelCurrentPassword = new System.Windows.Forms.Label();
-            this.labelNewPass = new System.Windows.Forms.Label();
-            this.labelRepeatPass = new System.Windows.Forms.Label();
+            this.btEditDocChangePas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelEditDocName
@@ -64,6 +59,7 @@
             this.tbEditDocName.Name = "tbEditDocName";
             this.tbEditDocName.Size = new System.Drawing.Size(100, 20);
             this.tbEditDocName.TabIndex = 1;
+            this.tbEditDocName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEditDocName_KeyPress);
             // 
             // tbEditDocLastName
             // 
@@ -71,6 +67,7 @@
             this.tbEditDocLastName.Name = "tbEditDocLastName";
             this.tbEditDocLastName.Size = new System.Drawing.Size(100, 20);
             this.tbEditDocLastName.TabIndex = 3;
+            this.tbEditDocLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEditDocLastName_KeyPress);
             // 
             // labelEditDocLastName
             // 
@@ -87,6 +84,7 @@
             this.tbEditDocSecName.Name = "tbEditDocSecName";
             this.tbEditDocSecName.Size = new System.Drawing.Size(100, 20);
             this.tbEditDocSecName.TabIndex = 5;
+            this.tbEditDocSecName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEditDocSecName_KeyPress);
             // 
             // labelEditDocSecName
             // 
@@ -116,7 +114,7 @@
             "10:40",
             "11:00",
             "12:00"});
-            this.clbTime.Location = new System.Drawing.Point(166, 148);
+            this.clbTime.Location = new System.Drawing.Point(114, 148);
             this.clbTime.Name = "clbTime";
             this.clbTime.Size = new System.Drawing.Size(75, 109);
             this.clbTime.TabIndex = 25;
@@ -137,32 +135,11 @@
             this.clbDay.Size = new System.Drawing.Size(73, 109);
             this.clbDay.TabIndex = 35;
             // 
-            // tbEditDocPassword
-            // 
-            this.tbEditDocPassword.Location = new System.Drawing.Point(18, 292);
-            this.tbEditDocPassword.Name = "tbEditDocPassword";
-            this.tbEditDocPassword.Size = new System.Drawing.Size(100, 20);
-            this.tbEditDocPassword.TabIndex = 36;
-            // 
-            // tbEditDocPasswordChek
-            // 
-            this.tbEditDocPasswordChek.Location = new System.Drawing.Point(141, 292);
-            this.tbEditDocPasswordChek.Name = "tbEditDocPasswordChek";
-            this.tbEditDocPasswordChek.Size = new System.Drawing.Size(100, 20);
-            this.tbEditDocPasswordChek.TabIndex = 37;
-            // 
-            // tbEditDocCurrentPassword
-            // 
-            this.tbEditDocCurrentPassword.Location = new System.Drawing.Point(102, 342);
-            this.tbEditDocCurrentPassword.Name = "tbEditDocCurrentPassword";
-            this.tbEditDocCurrentPassword.Size = new System.Drawing.Size(100, 20);
-            this.tbEditDocCurrentPassword.TabIndex = 38;
-            // 
             // btSaveChanges
             // 
-            this.btSaveChanges.Location = new System.Drawing.Point(66, 385);
+            this.btSaveChanges.Location = new System.Drawing.Point(114, 300);
             this.btSaveChanges.Name = "btSaveChanges";
-            this.btSaveChanges.Size = new System.Drawing.Size(101, 23);
+            this.btSaveChanges.Size = new System.Drawing.Size(77, 23);
             this.btSaveChanges.TabIndex = 39;
             this.btSaveChanges.Text = "Save Changes";
             this.btSaveChanges.UseVisualStyleBackColor = true;
@@ -171,7 +148,7 @@
             // btCancel
             // 
             this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btCancel.Location = new System.Drawing.Point(202, 385);
+            this.btCancel.Location = new System.Drawing.Point(197, 300);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(82, 23);
             this.btCancel.TabIndex = 40;
@@ -190,55 +167,33 @@
             // labelChangeTime
             // 
             this.labelChangeTime.AutoSize = true;
-            this.labelChangeTime.Location = new System.Drawing.Point(163, 129);
+            this.labelChangeTime.Location = new System.Drawing.Point(111, 129);
             this.labelChangeTime.Name = "labelChangeTime";
             this.labelChangeTime.Size = new System.Drawing.Size(63, 13);
             this.labelChangeTime.TabIndex = 42;
             this.labelChangeTime.Text = "Select Time";
             // 
-            // labelCurrentPassword
+            // btEditDocChangePas
             // 
-            this.labelCurrentPassword.AutoSize = true;
-            this.labelCurrentPassword.Location = new System.Drawing.Point(6, 349);
-            this.labelCurrentPassword.Name = "labelCurrentPassword";
-            this.labelCurrentPassword.Size = new System.Drawing.Size(90, 13);
-            this.labelCurrentPassword.TabIndex = 43;
-            this.labelCurrentPassword.Text = "Current Password";
-            // 
-            // labelNewPass
-            // 
-            this.labelNewPass.AutoSize = true;
-            this.labelNewPass.Location = new System.Drawing.Point(16, 276);
-            this.labelNewPass.Name = "labelNewPass";
-            this.labelNewPass.Size = new System.Drawing.Size(78, 13);
-            this.labelNewPass.TabIndex = 44;
-            this.labelNewPass.Text = "New Password";
-            // 
-            // labelRepeatPass
-            // 
-            this.labelRepeatPass.AutoSize = true;
-            this.labelRepeatPass.Location = new System.Drawing.Point(138, 276);
-            this.labelRepeatPass.Name = "labelRepeatPass";
-            this.labelRepeatPass.Size = new System.Drawing.Size(91, 13);
-            this.labelRepeatPass.TabIndex = 45;
-            this.labelRepeatPass.Text = "Repeat Password";
+            this.btEditDocChangePas.Location = new System.Drawing.Point(204, 222);
+            this.btEditDocChangePas.Name = "btEditDocChangePas";
+            this.btEditDocChangePas.Size = new System.Drawing.Size(75, 35);
+            this.btEditDocChangePas.TabIndex = 43;
+            this.btEditDocChangePas.Text = "Cange \r\nPassword";
+            this.btEditDocChangePas.UseVisualStyleBackColor = true;
+            this.btEditDocChangePas.Click += new System.EventHandler(this.btEditDocChangePas_Click);
             // 
             // EditDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancel;
-            this.ClientSize = new System.Drawing.Size(284, 420);
-            this.Controls.Add(this.labelRepeatPass);
-            this.Controls.Add(this.labelNewPass);
-            this.Controls.Add(this.labelCurrentPassword);
+            this.ClientSize = new System.Drawing.Size(284, 333);
+            this.Controls.Add(this.btEditDocChangePas);
             this.Controls.Add(this.labelChangeTime);
             this.Controls.Add(this.labelNewDays);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btSaveChanges);
-            this.Controls.Add(this.tbEditDocCurrentPassword);
-            this.Controls.Add(this.tbEditDocPasswordChek);
-            this.Controls.Add(this.tbEditDocPassword);
             this.Controls.Add(this.clbDay);
             this.Controls.Add(this.clbTime);
             this.Controls.Add(this.labelInfo);
@@ -267,15 +222,10 @@
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.CheckedListBox clbTime;
         private System.Windows.Forms.CheckedListBox clbDay;
-        private System.Windows.Forms.TextBox tbEditDocPassword;
-        private System.Windows.Forms.TextBox tbEditDocPasswordChek;
-        private System.Windows.Forms.TextBox tbEditDocCurrentPassword;
         private System.Windows.Forms.Button btSaveChanges;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Label labelNewDays;
         private System.Windows.Forms.Label labelChangeTime;
-        private System.Windows.Forms.Label labelCurrentPassword;
-        private System.Windows.Forms.Label labelNewPass;
-        private System.Windows.Forms.Label labelRepeatPass;
+        private System.Windows.Forms.Button btEditDocChangePas;
     }
 }

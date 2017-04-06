@@ -17,3 +17,4 @@ C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRData
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.dll
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.pdb
 C:\Users\Andii\Documents\Visual Studio 2015\Projects\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.csprojResolveAssemblyReference.cache
+E:\LifeAfterUni\CMD\Artinov\HospitalRecordSystem\HRDatabaseEntity\obj\Debug\HADatabaseEntity.csprojResolveAssemblyReference.cache

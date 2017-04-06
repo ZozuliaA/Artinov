@@ -79,6 +79,7 @@
             // 
             // cbChoseSpesialty
             // 
+            this.cbChoseSpesialty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbChoseSpesialty.FormattingEnabled = true;
             this.cbChoseSpesialty.Location = new System.Drawing.Point(11, 24);
             this.cbChoseSpesialty.Name = "cbChoseSpesialty";

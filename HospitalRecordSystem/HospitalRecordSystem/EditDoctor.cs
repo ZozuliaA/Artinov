@@ -77,5 +77,38 @@ namespace HospitalApointmentSystem.Client
             }
             
         }
+
+        private void tbEditDocName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))//)&& (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbEditDocLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))//)&& (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbEditDocSecName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))//)&& (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btEditDocChangePas_Click(object sender, EventArgs e)
+        {
+            EditDocPassword editRoomForm = new EditDocPassword(_doctor.DoctorId);
+            if (editRoomForm.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }
